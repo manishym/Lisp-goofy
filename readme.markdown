@@ -6,3 +6,7 @@ Lisp for web
 ------------
 It is a game voting web application, which is also a kind of tutorial for hunchentoot server.
 The original blog can be found on [Adam Petersen's](http://www.adampetersen.se/articles/lispweb.htm) page. The api of hunchentoot has changed since the blog, so there are some minor changes required for it to work
+
+Paradigms of Artificial Intelligence Programming
+------------------------------------------------
+* The general problem solver

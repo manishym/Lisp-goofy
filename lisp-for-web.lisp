@@ -10,15 +10,11 @@
 (defmethod vote-for (user-selected-game)
   (incf (votes user-selected-game)))
 (defvar *games* nil)
-(defun game-from-name (name)
-  (find name *games* :test #'string-equal :key #'name))
+
 (defun game-stored? (name)
   (game-from-name name))
-(defun games ()
-  (sort (copy-list *games*)  #'> :key #'votes))
-(defun add-game (name)
-  (unless (game-stored? name)
-    (push (make-instance 'game :name name) *games*)))
+
+
 (defmacro standard-page ((&key title) &body body)
   `(with-html-output-to-string (*standard-output* nil :prologue t :indent t)
      (:html :xmlns "http://www.w3.org/1999/xhtml"
@@ -89,3 +85,21 @@
       (add-game name))
     (redirect "/retro-games")))
 
+(defun games()
+  (nreverse (get-instances-by-range 'persistant-game 'votes nil nil)))
+(defun add-game (name)
+  (with-transaction ()
+    (unless (game-stored? name)
+      (make-instance 'persistant-game :name name))))
+(defun game-from-name (name)
+  (get-instance-by-value 'persistant-game 'name name))
+(defpclass persistant-game ()
+  ((name :reader name
+         :initarg :name
+         :index t)
+   (votes :accessor votes
+          :initarg :votes
+          :initform 0
+          :index t)))
+
+;(open-store '(:clsql (:sqlite3 "/home/manish/projects/lisp/web/learn/lfw")))
