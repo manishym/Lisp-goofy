@@ -105,3 +105,40 @@
         ((or (null src) (funcall fn (car src)))
          (values (nreverse acc) src))
       (push (car src) acc))))
+
+
+(defun most (fn lst)
+  (if (null lst)
+      (values nil nil)
+      (let* ((wins (car lst))
+             (max (funcall fn wins)))
+        (dolist (obj (cdr lst))
+          (let ((score (funcall fn obj)))
+            (when (> score max)
+              (setq wins obj
+                    max score))))
+        (values wins max))))
+
+(defun best (fn lst)
+  (if (null lst)
+      nil
+      (let ((wins (car lst)))
+        (dolist (obj (cdr lst))
+          (if (funcall fn obj wins)
+              (setq wins obj)))
+        wins)))
+
+
+(defun mostn (fn lst)
+  (if (null lst)
+      (values nil nil)
+      (let ((result (list (car lst)))
+            (max (funcall fn (car lst))))
+        (dolist (obj (cdr lst))
+          (let ((score (funcall fn obj)))
+            (cond ((> score max)
+                   (setq max score
+                         result (list obj)))
+                  ((= score max) 
+                   (push obj result)))))
+        (values (nreverse result) max))))
