@@ -219,3 +219,63 @@
 
 (defun symb (&rest args)
   (values (intern (apply #' mkstr args))))
+
+;;;;;; CLOSURES
+;;; Starting to read this chapter made me realize how good PG is with lisp
+;;  It is as enlightening as SICP.
+(defvar *!equivs* (make-hash-table))
+
+(defun ! (fn)
+  (or (gethash fn *!EQUIVS*) fn))
+
+(defun def! (fn fn!)
+  (setf (gethash fn *!EQUIVS*) fn!))
+
+
+(defun compose (&rest fns)
+  (if fns
+      (let ((fn1 (last1 fns))
+            (fns (butlast fns)))
+        #'(lambda (&rest args)
+            (reduce #'funcall fns
+                    :from-end t
+                    :initial-value (apply fn1 args))))
+      #'identity))
+
+(defun lrec (rec &optional base)
+  (labels ((self (lst)
+             (if (null lst)
+                 (if (functionp base)
+                     (funcall base)
+                     base)
+                 (funcall rec (car lst)
+                          #'(lambda ()
+                              (self (cdr lst)))))))
+    #'self))
+
+(defun ttrav (rec &optional (base #'identity))
+  (labels ((self (tree)
+             (if (atom tree)
+                 (if (functionp base)
+                     (funcall base tree))
+                 (funcall rec (self (car tree))
+                          (if (cdr tree)
+                              (self (cdr tree)))))))
+    #'self))
+
+(defun trec (rec &optional (base #'identity))
+  (labels 
+      ((self (tree)
+         (if (atom tree)
+             (if (functionp base)
+                 (funcall base tree)
+                 base)
+             (funcall rec tree 
+                      #'(lambda ()
+                          (self (car tree)))
+                      #'(lambda  ()
+                          (if (cdr tree)
+                              (self (cdr tree))))))))
+    #'self))
+
+;;; Functions as Representation

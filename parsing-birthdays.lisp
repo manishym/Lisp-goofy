@@ -31,3 +31,32 @@
                 ( (indian-representation day month year)
                  (encode-universal-time 0 0 0 day month year))
                 (t nil))))))
+
+
+(defun send-email (to subject body)
+  (cl-smtp:send-email "smtp.gmail.com"
+                      "mani.emsys@gmail.com"
+                      to
+                      subject
+                      body
+                      :ssl :tls
+                      :authentication '(:login "mani.emsys@gmail.com" "real-password")))
+
+
+
+
+(defun friend-equal (x y)
+  (and (string= (friend-name x) (friend-name y))
+       (string= (friend-email x) (friend-email y))))
+
+;;DONE: need to fix this fun such that it will not push duplicates
+(defun make-user-friends-list-from-file (user-obj file) 
+  (dolist (x (rest (fare-csv:read-csv-file file)))                    
+    (destructuring-bind (name email birthday) x
+      (pushnew  
+       (make-friend 
+        :name name 
+        :email email 
+        :birthday (read-date-from-string birthday)) 
+       (user-friends-list user-obj) :test #'friend-equal)))
+  'done)

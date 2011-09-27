@@ -1,5 +1,5 @@
 (defpackage :ps-tutorial
-  (:use :cl :cl-who :hunchentoot :parenscript :cl-fad))
+  (:use :cl :cl-who :hunchentoot :parenscri :cl-fad))
 (setf *js-string-delimiter* #\")
 
 ;; (start (make-instance 'acceptor :port 8080))
@@ -109,7 +109,6 @@
                 (dotimes (i (length *images* ))
                   (when (string= image-name (aref *images* i))
                     (show-image-number i)))))))))
-
 
 
 

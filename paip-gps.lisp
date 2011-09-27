@@ -1,4 +1,4 @@
-;;;;; The General problem solver was a AI program that was written to solve most of the
+;;;; The General problem solver was a AI program that was written to solve most of the
 ;;  problems using a computer. Although it did not live upto the expctation, it
 ;;  helped AI research further
 

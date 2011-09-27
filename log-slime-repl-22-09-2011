@@ -1,0 +1,2888 @@
+; SLIME 2010-07-21
+; compiling file "/home/manish/projects/lisp/web/learn/parsing-birthdays.lisp" (written 18 SEP 2011 11:00:30 PM):
+
+; file: /home/manish/projects/lisp/web/learn/parsing-birthdays.lisp
+; in: DEFUN CURRENT-YEAR
+;     (MULTIPLE-VALUE-BIND (S MIN H D M Y) (GET-DECODED-TIME) Y)
+; --> MULTIPLE-VALUE-CALL 
+; ==>
+;   #'(LAMBDA (&OPTIONAL (S) (MIN) (H) (D) (M) (Y) &REST #:G26)
+;       (DECLARE (IGNORE #:G26))
+;       Y)
+; 
+; caught STYLE-WARNING:
+;   The variable S is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable MIN is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable H is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable D is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable M is defined but never used.
+; 
+; compilation unit aborted
+;   caught 1 fatal ERROR condition
+;   caught 5 STYLE-WARNING conditions
+;
+; compilation aborted because of fatal error:
+;   SB-INT:SIMPLE-READER-PACKAGE-ERROR at 1153 (line 37, column 21) on #<SB-SYS:FD-STREAM
+;                                                                        for "file /home/manish/projects/lisp/web/learn/parsing-birthdays.lisp"
+;                                                                        {1003CF5BE1}>:
+;     package "CL-SMTP" not found
+;   
+; compilation aborted after 0:00:00.094
+
+CL-USER> (ql:quickload 'cl-smtp)
+To load "cl-smtp":
+  Load 1 ASDF system:
+    cl-smtp
+; Loading "cl-smtp"
+
+; compiling file "/home/manish/projects/lisp/web/learn/parsing-birthdays.lisp" (written 18 SEP 2011 11:00:30 PM):
+
+; file: /home/manish/projects/lisp/web/learn/parsing-birthdays.lisp
+; in: DEFUN CURRENT-YEAR
+;     (MULTIPLE-VALUE-BIND (S MIN H D M Y) (GET-DECODED-TIME) Y)
+; --> MULTIPLE-VALUE-CALL 
+; ==>
+;   #'(LAMBDA (&OPTIONAL (S) (MIN) (H) (D) (M) (Y) &REST #:G26)
+;       (DECLARE (IGNORE #:G26))
+;       Y)
+; 
+; caught STYLE-WARNING:
+;   The variable S is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable MIN is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable H is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable D is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable M is defined but never used.
+; 
+; compilation unit finished
+;   caught 5 STYLE-WARNING conditions
+
+; /home/manish/projects/lisp/web/learn/parsing-birthdays.fasl written
+; compilation finished in 0:00:00.170
+; compiling file "/home/manish/projects/lisp/web/learn/remind-me.lisp" (written 18 SEP 2011 10:39:27 PM):
+
+; file: /home/manish/projects/lisp/web/learn/remind-me.lisp
+; in: DEFUN HANDLE-FILE
+;     (DESTRUCTURING-BIND
+;         (REMINDME::PATH REMINDME::FILE-NAME HUNCHENTOOT:CONTENT-TYPE)
+;         HUNCHENTOOT:POST-PARAMETER
+;       (LET ((REMINDME::NEW-PATH
+;              (MAKE-PATHNAME :NAME REMINDME::FILE-NAME :TYPE NIL :DEFAULTS
+;                             REMINDME::*TMP-TEST-DIRECTORY*)))
+;         (HUNCHENTOOT:LOG-MESSAGE "New-path ~A"
+;                                  (PATHNAME-NAME REMINDME::NEW-PATH))
+;         (CL-FAD:COPY-FILE REMINDME::PATH
+;                           (ENSURE-DIRECTORIES-EXIST REMINDME::NEW-PATH))
+;         REMINDME::NEW-PATH))
+; --> LET LET* 
+; ==>
+;   (LET* ((REMINDME::PATH (CAR #:WHOLE62))
+;          (REMINDME::FILE-NAME (CAR (CDR #:WHOLE62)))
+;          (HUNCHENTOOT:CONTENT-TYPE (CAR (CDR #))))
+;     (LET ((REMINDME::NEW-PATH
+;            (MAKE-PATHNAME :NAME REMINDME::FILE-NAME :TYPE NIL :DEFAULTS
+;                           REMINDME::*TMP-TEST-DIRECTORY*)))
+;       (HUNCHENTOOT:LOG-MESSAGE "New-path ~A"
+;                                (PATHNAME-NAME REMINDME::NEW-PATH))
+;       (CL-FAD:COPY-FILE REMINDME::PATH
+;                         (ENSURE-DIRECTORIES-EXIST REMINDME::NEW-PATH))
+;       REMINDME::NEW-PATH))
+; 
+; caught STYLE-WARNING:
+;   The variable CONTENT-TYPE is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+
+; /home/manish/projects/lisp/web/learn/remind-me.fasl written
+; compilation finished in 0:00:00.179
+; compiling file "/home/manish/projects/lisp/web/learn/remind-me.lisp" (written 18 SEP 2011 10:39:27 PM):
+
+; file: /home/manish/projects/lisp/web/learn/remind-me.lisp
+; in: DEFUN HANDLE-FILE
+;     (DESTRUCTURING-BIND
+;         (REMINDME::PATH REMINDME::FILE-NAME HUNCHENTOOT:CONTENT-TYPE)
+;         HUNCHENTOOT:POST-PARAMETER
+;       (LET ((REMINDME::NEW-PATH
+;              (MAKE-PATHNAME :NAME REMINDME::FILE-NAME :TYPE NIL :DEFAULTS
+;                             REMINDME::*TMP-TEST-DIRECTORY*)))
+;         (HUNCHENTOOT:LOG-MESSAGE "New-path ~A"
+;                                  (PATHNAME-NAME REMINDME::NEW-PATH))
+;         (CL-FAD:COPY-FILE REMINDME::PATH
+;                           (ENSURE-DIRECTORIES-EXIST REMINDME::NEW-PATH))
+;         REMINDME::NEW-PATH))
+; --> LET LET* 
+; ==>
+;   (LET* ((REMINDME::PATH (CAR #:WHOLE62))
+;          (REMINDME::FILE-NAME (CAR (CDR #:WHOLE62)))
+;          (HUNCHENTOOT:CONTENT-TYPE (CAR (CDR #))))
+;     (LET ((REMINDME::NEW-PATH
+;            (MAKE-PATHNAME :NAME REMINDME::FILE-NAME :TYPE NIL :DEFAULTS
+;                           REMINDME::*TMP-TEST-DIRECTORY*)))
+;       (HUNCHENTOOT:LOG-MESSAGE "New-path ~A"
+;                                (PATHNAME-NAME REMINDME::NEW-PATH))
+;       (CL-FAD:COPY-FILE REMINDME::PATH
+;                         (ENSURE-DIRECTORIES-EXIST REMINDME::NEW-PATH))
+;       REMINDME::NEW-PATH))
+; 
+; caught STYLE-WARNING:
+;   The variable CONTENT-TYPE is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+
+; /home/manish/projects/lisp/web/learn/remind-me.fasl written
+; compilation finished in 0:00:00.136
+(CL-SMTP)
+CL-USER> 
+REMINDME> (add-user shakeela "passwd" nil)
+; Evaluation aborted.
+REMINDME> (add-user "shakeela" "passwd" nil)
+#S(USER :NAME "shakeela" :PASSWORD "passwd" :FRIENDS-LIST NIL)
+REMINDME> get-user "shakeela")
+; Evaluation aborted.
+REMINDME> (get-user "shakeela")
+#S(USER :NAME "shakeela" :PASSWORD "passwd" :FRIENDS-LIST NIL)
+T
+REMINDME> (make-friend :name "Manish" :email "manishym@gmail.com" :birthday "26.12.1981")
+#S(FRIEND :NAME "Manish" :EMAIL "manishym@gmail.com" :BIRTHDAY "26.12.1981")
+REMINDME> (push (user-friends-list (get-user "shakeela" (make-friend :name "Manish" :email "manishym@gmail.com" :birthday "26.12.1981"))))
+; Evaluation aborted.
+REMINDME> (push (user-friends-list (get-user "shakeela")) (make-friend :name "Manish" :email "manishym@gmail.com" :birthday "26.12.1981"))
+; in: LAMBDA NIL
+;     (FUNCALL #'(SETF REMINDME::MAKE-FRIEND) #:NEW1634 :NAME "Manish" :EMAIL
+;              "manishym@gmail.com" :BIRTHDAY "26.12.1981")
+; ==>
+;   (SB-C::%FUNCALL #'(SETF REMINDME::MAKE-FRIEND) #:NEW1634 :NAME "Manish"
+;                   :EMAIL "manishym@gmail.com" :BIRTHDAY "26.12.1981")
+; 
+; caught STYLE-WARNING:
+;   undefined function: (SETF MAKE-FRIEND)
+; 
+; compilation unit finished
+;   Undefined function:
+;     (SETF MAKE-FRIEND)
+;   caught 1 STYLE-WARNING condition
+; Evaluation aborted.
+REMINDME> (push (make-friend :name "Manish" :email "manishym@gmail.com" :birthday "26.12.1981")  (user-friends-list (get-user "shakeela")))
+(#S(FRIEND :NAME "Manish" :EMAIL "manishym@gmail.com" :BIRTHDAY "26.12.1981"))
+REMINDME> (find-if #'(lambda (y) (let ((x (friend-name y))) (string= x "Manish")))
+                   (user-friends-list (get-user "shakeela")))
+                   
+#S(FRIEND :NAME "Manish" :EMAIL "manishym@gmail.com" :BIRTHDAY "26.12.1981")
+REMINDME> (defun find-friend (name friend-name)
+            (find-if #'(lambda (y) (let ((x (friend-name y))) (string= x friend-name)))
+                   (user-friends-list (get-user name))))
+                   
+FIND-FRIEND
+REMINDME> (find-friend "shakeela" "Manish")
+#S(FRIEND :NAME "Manish" :EMAIL "manishym@gmail.com" :BIRTHDAY "26.12.1981")
+REMINDME> 
+; No value
+REMINDME> (ql:quickload 'fare-csv)
+To load "fare-csv":
+  Load 1 ASDF system:
+    fare-csv
+; Loading "fare-csv"
+
+(FARE-CSV)
+REMINDME> (fare-csv:read-csv-file "birthdays.cvs")
+; Evaluation aborted.
+REMINDME> (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+(("Name" "Email" "Birthday") ("Manish YM" "manishym@gmail.com" "26-12-1981")
+ ("Shakeela" "shakeela.jb@gmail.com" "19-12-1982")
+ ("Sahana" "sahanaym@gmail.com" "24-09-1977"))
+REMINDME> (destructuring-bind (frmt frnd1 frnd2 frnd3)  (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs"))
+; in: LAMBDA NIL
+;     (LET* ((REMINDME::FRMT (CAR #:WHOLE1646))
+;            (REMINDME::FRND1 (CAR (CDR #:WHOLE1646)))
+;            (REMINDME::FRND2 (CAR (CDR #)))
+;            (REMINDME::FRND3 (CAR (CDR #))))
+;       )
+; 
+; caught STYLE-WARNING:
+;   The variable FRMT is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable FRND1 is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable FRND2 is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable FRND3 is defined but never used.
+; 
+; compilation unit finished
+;   caught 4 STYLE-WARNING conditions
+NIL
+REMINDME> (destructuring-bind (frmt frnd1 frnd2 frnd3)  (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs") (list frnd1 frnd2 frnd3 frnd4))
+; in: LAMBDA NIL
+;     (LET* ((REMINDME::FRMT (CAR #:WHOLE1649))
+;            (REMINDME::FRND1 (CAR (CDR #:WHOLE1649)))
+;            (REMINDME::FRND2 (CAR (CDR #)))
+;            (REMINDME::FRND3 (CAR (CDR #))))
+;       (LIST REMINDME::FRND1 REMINDME::FRND2 REMINDME::FRND3 REMINDME::FRND4))
+; 
+; caught STYLE-WARNING:
+;   The variable FRMT is defined but never used.
+
+;     (LIST REMINDME::FRND1 REMINDME::FRND2 REMINDME::FRND3 REMINDME::FRND4)
+; 
+; caught WARNING:
+;   undefined variable: FRND4
+; 
+; compilation unit finished
+;   Undefined variable:
+;     FRND4
+;   caught 1 WARNING condition
+;   caught 1 STYLE-WARNING condition
+; Evaluation aborted.
+REMINDME> (destructuring-bind (frmt frnd1 frnd2 frnd3)  (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs") (list frnd1 frnd2 frnd3))
+; in: LAMBDA NIL
+;     (LET* ((REMINDME::FRMT (CAR #:WHOLE1652))
+;            (REMINDME::FRND1 (CAR (CDR #:WHOLE1652)))
+;            (REMINDME::FRND2 (CAR (CDR #)))
+;            (REMINDME::FRND3 (CAR (CDR #))))
+;       (LIST REMINDME::FRND1 REMINDME::FRND2 REMINDME::FRND3))
+; 
+; caught STYLE-WARNING:
+;   The variable FRMT is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+(("Manish YM" "manishym@gmail.com" "26-12-1981")
+ ("Shakeela" "shakeela.jb@gmail.com" "19-12-1982")
+ ("Sahana" "sahanaym@gmail.com" "24-09-1977"))
+REMINDME> (mapcar #'(lambda (x) 
+                      (destructuring-bind (name email brithday) (x)
+                        (push (make-friend :name name :email email :birthday (read-date-from-st birthday)) (user-friends-list (get-user "shakeela"))))) (rest (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")))
+; in: LAMBDA NIL
+;     (DESTRUCTURING-BIND
+;         (REMINDME::NAME REMINDME::EMAIL REMINDME::BRITHDAY)
+;         (REMINDME::X)
+;       (PUSH
+;        (REMINDME::MAKE-FRIEND :NAME REMINDME::NAME :EMAIL REMINDME::EMAIL
+;                               :BIRTHDAY
+;                               (REMINDME::READ-DATE-FROM-ST REMINDME::BIRTHDAY))
+;        (REMINDME::USER-FRIENDS-LIST (REMINDME::GET-USER "shakeela"))))
+; --> LET LET* 
+; ==>
+;   (LET* ((REMINDME::NAME (CAR #:WHOLE0))
+;          (REMINDME::EMAIL (CAR (CDR #:WHOLE0)))
+;          (REMINDME::BRITHDAY (CAR (CDR #))))
+;     (PUSH
+;      (REMINDME::MAKE-FRIEND :NAME REMINDME::NAME :EMAIL REMINDME::EMAIL
+;                             :BIRTHDAY
+;                             (REMINDME::READ-DATE-FROM-ST REMINDME::BIRTHDAY))
+;      (REMINDME::USER-FRIENDS-LIST (REMINDME::GET-USER "shakeela"))))
+; 
+; caught STYLE-WARNING:
+;   The variable BRITHDAY is defined but never used.
+
+;     #'(LAMBDA (REMINDME::X)
+;         (DESTRUCTURING-BIND
+;             (REMINDME::NAME REMINDME::EMAIL REMINDME::BRITHDAY)
+;             (REMINDME::X)
+;           (PUSH
+;            (REMINDME::MAKE-FRIEND :NAME REMINDME::NAME :EMAIL REMINDME::EMAIL
+;                                   :BIRTHDAY
+;                                   (REMINDME::READ-DATE-FROM-ST
+;                                    REMINDME::BIRTHDAY))
+;            (REMINDME::USER-FRIENDS-LIST (REMINDME::GET-USER "shakeela")))))
+; 
+; caught STYLE-WARNING:
+;   The variable X is defined but never used.
+
+;     (REMINDME::READ-DATE-FROM-ST REMINDME::BIRTHDAY)
+; 
+; caught WARNING:
+;   undefined variable: BIRTHDAY
+; 
+; caught STYLE-WARNING:
+;   undefined function: READ-DATE-FROM-ST
+
+;     (REMINDME::X)
+; 
+; caught STYLE-WARNING:
+;   undefined function: X
+; 
+; compilation unit finished
+;   Undefined functions:
+;     READ-DATE-FROM-ST X
+;   Undefined variable:
+;     BIRTHDAY
+;   caught 1 WARNING condition
+;   caught 4 STYLE-WARNING conditions
+; Evaluation aborted.
+REMINDME> (mapcar #'(lambda (x) 
+                      (destructuring-bind (name email brithday) x
+                        (push (make-friend :name name :email email :birthday (read-date-from-st birthday)) (user-friends-list (get-user "shakeela"))))) (rest (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")))
+; in: LAMBDA NIL
+;     (DESTRUCTURING-BIND
+;         (REMINDME::NAME REMINDME::EMAIL REMINDME::BRITHDAY)
+;         REMINDME::X
+;       (PUSH
+;        (REMINDME::MAKE-FRIEND :NAME REMINDME::NAME :EMAIL REMINDME::EMAIL
+;                               :BIRTHDAY
+;                               (REMINDME::READ-DATE-FROM-ST REMINDME::BIRTHDAY))
+;        (REMINDME::USER-FRIENDS-LIST (REMINDME::GET-USER "shakeela"))))
+; --> LET LET* 
+; ==>
+;   (LET* ((REMINDME::NAME (CAR #:WHOLE0))
+;          (REMINDME::EMAIL (CAR (CDR #:WHOLE0)))
+;          (REMINDME::BRITHDAY (CAR (CDR #))))
+;     (PUSH
+;      (REMINDME::MAKE-FRIEND :NAME REMINDME::NAME :EMAIL REMINDME::EMAIL
+;                             :BIRTHDAY
+;                             (REMINDME::READ-DATE-FROM-ST REMINDME::BIRTHDAY))
+;      (REMINDME::USER-FRIENDS-LIST (REMINDME::GET-USER "shakeela"))))
+; 
+; caught STYLE-WARNING:
+;   The variable BRITHDAY is defined but never used.
+
+;     (REMINDME::READ-DATE-FROM-ST REMINDME::BIRTHDAY)
+; 
+; caught WARNING:
+;   undefined variable: BIRTHDAY
+; 
+; caught STYLE-WARNING:
+;   undefined function: READ-DATE-FROM-ST
+; 
+; compilation unit finished
+;   Undefined function:
+;     READ-DATE-FROM-ST
+;   Undefined variable:
+;     BIRTHDAY
+;   caught 1 WARNING condition
+;   caught 2 STYLE-WARNING conditions
+; Evaluation aborted.
+REMINDME> (mapcar #'(lambda (x) 
+                      (destructuring-bind (name email birthday) x
+                        (push (make-friend :name name :email email :birthday (read-date-from-st birthday)) (user-friends-list (get-user "shakeela"))))) (rest (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")))
+; 
+; caught STYLE-WARNING:
+;   undefined function: READ-DATE-FROM-ST
+; 
+; compilation unit finished
+;   Undefined function:
+;     READ-DATE-FROM-ST
+;   caught 1 STYLE-WARNING condition
+; Evaluation aborted.
+REMINDME> (mapcar #'(lambda (x) 
+                      (destructuring-bind (name email birthday) x
+                        (push (make-friend :name name :email email :birthday (read-date-from-string birthday)) (user-friends-list (get-user "shakeela"))))) (rest (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")))
+
+;     (REMINDME::READ-DATE-FROM-STRING REMINDME::BIRTHDAY)
+; 
+; caught STYLE-WARNING:
+;   undefined function: READ-DATE-FROM-STRING
+; 
+; compilation unit finished
+;   Undefined function:
+;     READ-DATE-FROM-STRING
+;   caught 1 STYLE-WARNING condition
+
+; compiling file "/home/manish/projects/lisp/web/learn/parsing-birthdays.lisp" (written 21 SEP 2011 11:52:16 PM):
+
+; file: /home/manish/projects/lisp/web/learn/parsing-birthdays.lisp
+; in: DEFUN CURRENT-YEAR
+;     (MULTIPLE-VALUE-BIND
+;         (REMINDME::S MIN REMINDME::H REMINDME::D REMINDME::M REMINDME::Y)
+;         (GET-DECODED-TIME)
+;       REMINDME::Y)
+; --> MULTIPLE-VALUE-CALL 
+; ==>
+;   #'(LAMBDA
+;         (&OPTIONAL (REMINDME::S) (MIN) (REMINDME::H) (REMINDME::D)
+;          (REMINDME::M) (REMINDME::Y)
+;          &REST #:G26)
+;       (DECLARE (IGNORE #:G26))
+;       REMINDME::Y)
+; 
+; caught STYLE-WARNING:
+;   The variable S is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable MIN is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable H is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable D is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable M is defined but never used.
+; 
+; compilation unit finished
+;   caught 5 STYLE-WARNING conditions
+
+; /home/manish/projects/lisp/web/learn/parsing-birthdays.fasl written
+; compilation finished in 0:00:00.079
+; Evaluation aborted.
+REMINDME> (mapcar #'(lambda (x) 
+                      (destructuring-bind (name email birthday) x
+                        (push (make-friend :name name :email email :birthday (read-date-from-string birthday)) (user-friends-list (get-user "shakeela"))))) (rest (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")))
+((#S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+  #S(FRIEND :NAME "Manish" :EMAIL "manishym@gmail.com" :BIRTHDAY "26.12.1981"))
+ (#S(FRIEND
+     :NAME "Shakeela"
+     :EMAIL "shakeela.jb@gmail.com"
+     :BIRTHDAY 2618073000)
+  #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+  #S(FRIEND :NAME "Manish" :EMAIL "manishym@gmail.com" :BIRTHDAY "26.12.1981"))
+ (#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+  #S(FRIEND
+     :NAME "Shakeela"
+     :EMAIL "shakeela.jb@gmail.com"
+     :BIRTHDAY 2618073000)
+  #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+  #S(FRIEND :NAME "Manish" :EMAIL "manishym@gmail.com" :BIRTHDAY "26.12.1981")))
+REMINDME> (user-friends-list (get-user "shakeela")
+                             )
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+ #S(FRIEND :NAME "Manish" :EMAIL "manishym@gmail.com" :BIRTHDAY "26.12.1981"))
+REMINDME> (dolist (x (rest (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")))                     (destructuring-bind (name email birthday) x
+                        (push (make-friend :name name :email email :birthday (read-date-from-string birthday)) (user-friends-list (get-user "shakeela"))))))
+; Evaluation aborted.
+REMINDME> (dolist (x (rest (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")))                     
+            (destructuring-bind (name email birthday) x
+              (push (make-friend :name name :email email :birthday (read-date-from-string birthday)) (user-friends-list (get-user "shakeela")))))
+NIL
+REMINDME> (user-friends-list (get-user "shakeela")
+                             )
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+ #S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+ #S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+ #S(FRIEND :NAME "Manish" :EMAIL "manishym@gmail.com" :BIRTHDAY "26.12.1981"))
+REMINDME> (setf (user-friends-list (get-user "shakeela")) nil)
+NIL
+REMINDME> (dolist (x (rest (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")))                     
+            (destructuring-bind (name email birthday) x
+              (push (make-friend :name name :email email :birthday (read-date-from-string birthday)) (user-friends-list (get-user "shakeela")))))
+NIL
+REMINDME> (user-friends-list (get-user "shakeela")
+                             )
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800))
+REMINDME> (defun make-user-friends-list-from-file (name file)
+            (dolist (x (rest (fare-csv:read-csv-file file)))
+              (destructuring-bind (name email birthday) x
+                (push (make-friend
+                       :name name
+                       :email email
+                       :birthday (read-date-from-string birthday))
+                      (user-friend-list (get-user name))))))
+; in: LAMBDA NIL
+;     (SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable NAME is defined but never used.
+; in: LAMBDA NIL
+;     (PUSH
+;      (REMINDME::MAKE-FRIEND :NAME REMINDME::NAME :EMAIL REMINDME::EMAIL :BIRTHDAY
+;                             (REMINDME::READ-DATE-FROM-STRING REMINDME::BIRTHDAY))
+;      (REMINDME::USER-FRIEND-LIST (REMINDME::GET-USER REMINDME::NAME)))
+; --> LET* FUNCALL 
+; ==>
+;   (SB-C::%FUNCALL #'(SETF REMINDME::USER-FRIEND-LIST) #:NEW6 #:TMP7)
+; 
+; caught STYLE-WARNING:
+;   undefined function: (SETF USER-FRIEND-LIST)
+
+; --> LET* CONS 
+; ==>
+;   (REMINDME::USER-FRIEND-LIST #:TMP7)
+; 
+; caught STYLE-WARNING:
+;   undefined function: USER-FRIEND-LIST
+; 
+; compilation unit finished
+;   Undefined functions:
+;     (SETF USER-FRIEND-LIST) USER-FRIEND-LIST
+;   caught 3 STYLE-WARNING conditions
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (defun make-user-friends-list-from-file (name file)
+            (dolist (x (rest (fare-csv:read-csv-file file)))
+              (destructuring-bind (name email birthday) x
+                (push (make-friend
+                       :name name
+                       :email email
+                       :birthday (read-date-from-string birthday))
+                      (user-friend-list (get-user name))))))
+; in: LAMBDA NIL
+;     (SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable NAME is defined but never used.
+
+; --> LET* FUNCALL 
+; ==>
+;   (SB-C::%FUNCALL #'(SETF REMINDME::USER-FRIEND-LIST) #:NEW6 #:TMP7)
+; 
+; caught STYLE-WARNING:
+;   undefined function: (SETF USER-FRIEND-LIST)
+
+; --> LET* CONS 
+; ==>
+;   (REMINDME::USER-FRIEND-LIST #:TMP7)
+; 
+; caught STYLE-WARNING:
+;   undefined function: USER-FRIEND-LIST
+; 
+; compilation unit finished
+;   Undefined functions:
+;     (SETF USER-FRIEND-LIST) USER-FRIEND-LIST
+;   caught 3 STYLE-WARNING conditions
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (defun make-user-friends-list-from-file (name file)
+            (dolist (x (rest (fare-csv:read-csv-file file)))
+              (destructuring-bind (name email birthday) x
+                (push (make-friend
+                       :name name
+                       :email email
+                       :birthday (read-date-from-string birthday))
+                      (user-friend-list (get-user name))))))
+; in: LAMBDA NIL
+;     (SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable NAME is defined but never used.
+
+; --> LET* FUNCALL 
+; ==>
+;   (SB-C::%FUNCALL #'(SETF REMINDME::USER-FRIEND-LIST) #:NEW6 #:TMP7)
+; 
+; caught STYLE-WARNING:
+;   undefined function: (SETF USER-FRIEND-LIST)
+
+; --> LET* CONS 
+; ==>
+;   (REMINDME::USER-FRIEND-LIST #:TMP7)
+; 
+; caught STYLE-WARNING:
+;   undefined function: USER-FRIEND-LIST
+; 
+; compilation unit finished
+;   Undefined functions:
+;     (SETF USER-FRIEND-LIST) USER-FRIEND-LIST
+;   caught 3 STYLE-WARNING conditions
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (defun make-user-friends-list-from-file (name file)
+            (dolist (x (rest (fare-csv:read-csv-file file)))
+              (destructuring-bind (name email birthday) x
+                (push (make-friend
+                       :name name
+                       :email email
+                       :birthday (read-date-from-string birthday))
+                      (user-friend-list (get-user name))))))
+; in: LAMBDA NIL
+;     (SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable NAME is defined but never used.
+
+; --> LET* FUNCALL 
+; ==>
+;   (SB-C::%FUNCALL #'(SETF REMINDME::USER-FRIEND-LIST) #:NEW6 #:TMP7)
+; 
+; caught STYLE-WARNING:
+;   undefined function: (SETF USER-FRIEND-LIST)
+
+; --> LET* CONS 
+; ==>
+;   (REMINDME::USER-FRIEND-LIST #:TMP7)
+; 
+; caught STYLE-WARNING:
+;   undefined function: USER-FRIEND-LIST
+; 
+; compilation unit finished
+;   Undefined functions:
+;     (SETF USER-FRIEND-LIST) USER-FRIEND-LIST
+;   caught 3 STYLE-WARNING conditions
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (make-user-friends-list-from-file "shakeela" "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+; Evaluation aborted.
+REMINDME> (defun make-user-friends-list-from-file (name file)
+            (dolist (x (rest (fare-csv:read-csv-file file)))
+              (destructuring-bind (name email birthday) x
+                (push (make-friend
+                       :name name
+                       :email email
+                       :birthday (read-date-from-string birthday))
+                      (user-friends-list (get-user name))))))
+; in: LAMBDA NIL
+;     (SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable NAME is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (make-user-friends-list-from-file "shakeela" "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+; Evaluation aborted.
+REMINDME> (defun make-user-friends-list-from-file (name file)
+            (dolist (x (rest (fare-csv:read-csv-file file)))
+              (destructuring-bind (name email birthday) x
+                (push (make-friend
+                       :name name
+                       :email email
+                       :birthday (read-date-from-string birthday))
+                      (user-friends-list (get-user name))))))
+; in: LAMBDA NIL
+;     (SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable NAME is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (rest fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+; Evaluation aborted.
+REMINDME> (rest (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs"))
+(("Manish YM" "manishym@gmail.com" "26-12-1981")
+ ("Shakeela" "shakeela.jb@gmail.com" "19-12-1982")
+ ("Sahana" "sahanaym@gmail.com" "24-09-1977"))
+REMINDME> (dolist (x (rest (fare-csv:read-csv-file "/home/manish/projects/lisp/web/learn/birthdays.cvs")))                     
+            (destructuring-bind (name email birthday) x
+              (push 
+               (make-friend 
+                :name name 
+                :email email 
+                :birthday (read-date-from-string birthday)) 
+               (user-friends-list (get-user "shakeela")))))
+NIL
+REMINDME> (defun make-user-friends-list-from-file (name file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (destructuring-bind (name email birthday) x
+                (push 
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list (get-user name ))))))
+; in: LAMBDA NIL
+;     (SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable NAME is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (defun make-user-friends-list-from-file (name file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (let  ((name (first x))
+                     (email (second x)) birthday) x
+                (push 
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list (get-user name ))))))
+; in: LAMBDA NIL
+;     (SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (LET (# # REMINDME::BIRTHDAY)
+;             REMINDME::X
+;             (PUSH # #)))))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (LET (# # REMINDME::BIRTHDAY)
+;             REMINDME::X
+;             (PUSH # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable NAME is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (defun make-user-friends-list-from-file (name file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (let  ((name (first x))
+                     (email (second x)) 
+                     (birthday (third x)))
+                (push 
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list (get-user name ))))))
+; in: LAMBDA NIL
+;     (SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (LET (# # #)
+;             (PUSH # #)))))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::NAME REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (LET (# # #)
+;             (PUSH # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable NAME is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (defun make-user-friends-list-from-file (user file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (destructuring-bind (name email birthday) x
+                (push 
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list (get-user user ))))))
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (defmacro nil! (x)
+            (let* ((g (gensym))
+                   (g x))
+              `(setf g nil)))
+; in: LAMBDA NIL
+;     (LET* ((REMINDME::G (GENSYM)) (REMINDME::G REMINDME::X))
+;       '(SETF REMINDME::G NIL))
+; 
+; caught STYLE-WARNING:
+;   The variable G is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable G is defined but never used.
+; 
+; compilation unit finished
+;   caught 2 STYLE-WARNING conditions
+NIL!
+REMINDME> (setf a 2)
+
+;     (SETF REMINDME::A 2)
+; ==>
+;   (SETQ REMINDME::A 2)
+; 
+; caught WARNING:
+;   undefined variable: A
+; 
+; compilation unit finished
+;   Undefined variable:
+;     A
+;   caught 1 WARNING condition
+2
+REMINDME> a
+2
+REMINDME> (nil! a)
+
+;     (REMINDME::NIL! REMINDME::A)
+; --> SETF 
+; ==>
+;   (SETQ REMINDME::G NIL)
+; 
+; caught WARNING:
+;   undefined variable: G
+; 
+; compilation unit finished
+;   Undefined variable:
+;     G
+;   caught 1 WARNING condition
+NIL
+REMINDME> a
+2
+REMINDME> (setf (user-friend-list (get-user "shakeela")))
+; Evaluation aborted.
+REMINDME> (setf (user-friend-list (get-user "shakeela")) nil)
+
+;     (FUNCALL #'(SETF REMINDME::USER-FRIEND-LIST) #:NEW1674 #:TMP1675)
+; ==>
+;   (SB-C::%FUNCALL #'(SETF REMINDME::USER-FRIEND-LIST) #:NEW1674 #:TMP1675)
+; 
+; caught STYLE-WARNING:
+;   undefined function: (SETF USER-FRIEND-LIST)
+; 
+; compilation unit finished
+;   Undefined function:
+;     (SETF USER-FRIEND-LIST)
+;   caught 1 STYLE-WARNING condition
+; Evaluation aborted.
+REMINDME> (setf (user-friends-list (get-user "shakeela")) nil)
+NIL
+REMINDME> (make-user-friends-list-from-file "shakeela" "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+NIL
+REMINDME> (user-friends-list (get-user "shakeela"))
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800))
+REMINDME> (defun make-user-friends-list-from-file (user-obj file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (destructuring-bind (name email birthday) x
+                (push 
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list )))))
+; in: LAMBDA NIL
+;     (PUSH
+;      (REMINDME::MAKE-FRIEND :NAME REMINDME::NAME :EMAIL REMINDME::EMAIL :BIRTHDAY
+;                             (REMINDME::READ-DATE-FROM-STRING REMINDME::BIRTHDAY))
+;      (REMINDME::USER-FRIENDS-LIST))
+; --> LET* FUNCALL SB-C::%FUNCALL 
+; ==>
+;   ((SETF REMINDME::USER-FRIENDS-LIST) #:NEW6)
+; 
+; caught WARNING:
+;   The function was called with one argument, but wants exactly two.
+
+; --> LET* CONS 
+; ==>
+;   (REMINDME::USER-FRIENDS-LIST)
+; 
+; caught WARNING:
+;   The function was called with zero arguments, but wants exactly one.
+
+;     (SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::USER-OBJ REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (REMINDME::USER-OBJ REMINDME::FILE)
+;       (BLOCK REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE
+;         (DOLIST (REMINDME::X (REST #))
+;           (DESTRUCTURING-BIND
+;               (REMINDME::NAME REMINDME::EMAIL REMINDME::BIRTHDAY)
+;               REMINDME::X
+;             (PUSH # #)))))
+; 
+; caught STYLE-WARNING:
+;   The variable USER-OBJ is defined but never used.
+; 
+; compilation unit finished
+;   caught 2 WARNING conditions
+;   caught 1 STYLE-WARNING condition
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (defun make-user-friends-list-from-file (user-obj file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (destructuring-bind (name email birthday) x
+                (push 
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list user-obj)))))
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (make-user-friends-list-from-file (get-user "shakeela") "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+NIL
+REMINDME> (defun make-user-friends-list-from-file (user-obj file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (destructuring-bind (name email birthday) x
+                (push 
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list user-obj)))
+              'done))
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (make-user-friends-list-from-file (get-user "shakeela") "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+NIL
+REMINDME> (make-user-friends-list-from-file (get-user "shakeela") "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+NIL
+REMINDME> (defun make-user-friends-list-from-file (user-obj file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (destructuring-bind (name email birthday) x
+                (push 
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list user-obj)))
+              'done) 'done )
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (make-user-friends-list-from-file (get-user "shakeela") "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+DONE
+REMINDME> (defun make-user-friends-list-from-file (user-obj file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (destructuring-bind (name email birthday) x
+                (push 
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list user-obj)))) 
+            'done) 
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (user-friends-list (get-user "shakeela"))
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+ #S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+ #S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+ #S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+ #S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800))
+REMINDME> (setf (user-friends-list (get-user "shakeela")) nil)
+NIL
+REMINDME> (user-friends-list (get-user "shakeela"))
+NIL
+REMINDME> (defun make-user-friends-list-from-file (user-obj file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (destructuring-bind (name email birthday) x
+                (pushnew 
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list user-obj)))) 
+            'done) 
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (make-user-friends-list-from-file (get-user "shakeela") "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+DONE
+REMINDME> (user-friends-list (get-user "shakeela"))
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800))
+REMINDME> (make-user-friends-list-from-file (get-user "shakeela") "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+DONE
+REMINDME> (user-friends-list (get-user "shakeela"))
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+ #S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800))
+REMINDME> (defun make-user-friends-list-from-file (user-obj file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (destructuring-bind (name email birthday) x
+                (pushnew  
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list user-obj))))
+            'done) 
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (defun friend-equal (x y)
+            (and (string= (friend-name x) (friend-name y))
+                 (string= (friend-email x) (friend-email y))))
+FRIEND-EQUAL
+REMINDME> (defun make-user-friends-list-from-file (user-obj file) 
+            (dolist (x (rest (fare-csv:read-csv-file file)))                    
+              (destructuring-bind (name email birthday) x
+                (pushnew  
+                 (make-friend 
+                  :name name 
+                  :email email 
+                  :birthday (read-date-from-string birthday)) 
+                 (user-friends-list user-obj) :test #'friend-equal)))
+            'done) 
+STYLE-WARNING:
+   redefining REMINDME::MAKE-USER-FRIENDS-LIST-FROM-FILE in DEFUN
+MAKE-USER-FRIENDS-LIST-FROM-FILE
+REMINDME> (user-friends-list (get-user "shakeela"))
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800)
+ #S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800))
+REMINDME> (setf (user-friends-list (get-user "shakeela")) nil)
+NIL
+REMINDME> (user-friends-list (get-user "shakeela"))
+NIL
+REMINDME> (make-user-friends-list-from-file (get-user "shakeela") "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+DONE
+REMINDME> (user-friends-list (get-user "shakeela"))
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800))
+REMINDME> (make-user-friends-list-from-file (get-user "shakeela") "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+DONE
+REMINDME> (user-friends-list (get-user "shakeela"))
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800))
+REMINDME> (defun create-user-from-form (name password friend-file)
+            (let ((user (make-user :name name :password password)))
+              (make-user-friends-list-from-file user friend-file)
+              (add-user-obj user)))
+              
+
+;     (REMINDME::ADD-USER-OBJ REMINDME::USER)
+; 
+; caught STYLE-WARNING:
+;   undefined function: ADD-USER-OBJ
+; 
+; compilation unit finished
+;   Undefined function:
+;     ADD-USER-OBJ
+;   caught 1 STYLE-WARNING condition
+CREATE-USER-FROM-FORM
+REMINDME> utilities.lisp(defun add-user-obj (user-obj &optional (database *database-of-users*))
+                          (setf (gethash (user-name user-obj) database) user-obj))d-user-obj (user-obj &optional (database *database-of-users*))
+            (setf (gethash (user-name user-obj) database) user-obj))
+ADD-USER-OBJ
+REMINDME> (trace add-user-obj)
+(ADD-USER-OBJ)
+REMINDME> (create-user-from-form "Manish" "password" "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+  0: (ADD-USER-OBJ
+      #S(USER
+         :NAME "Manish"
+         :PASSWORD "password"
+         :FRIENDS-LIST (#S(FRIEND
+                           :NAME "Sahana"
+                           :EMAIL "sahanaym@gmail.com"
+                           :BIRTHDAY 2452876200)
+                        #S(FRIEND
+                           :NAME "Shakeela"
+                           :EMAIL "shakeela.jb@gmail.com"
+                           :BIRTHDAY 2618073000)
+                        #S(FRIEND
+                           :NAME "Manish YM"
+                           :EMAIL "manishym@gmail.com"
+                           :BIRTHDAY 2587141800))))
+  0: ADD-USER-OBJ returned
+       #S(USER
+          :NAME "Manish"
+          :PASSWORD "password"
+          :FRIENDS-LIST (#S(FRIEND
+                            :NAME "Sahana"
+                            :EMAIL "sahanaym@gmail.com"
+                            :BIRTHDAY 2452876200)
+                         #S(FRIEND
+                            :NAME "Shakeela"
+                            :EMAIL "shakeela.jb@gmail.com"
+                            :BIRTHDAY 2618073000)
+                         #S(FRIEND
+                            :NAME "Manish YM"
+                            :EMAIL "manishym@gmail.com"
+                            :BIRTHDAY 2587141800)))
+#S(USER
+   :NAME "Manish"
+   :PASSWORD "password"
+   :FRIENDS-LIST (#S(FRIEND
+                     :NAME "Sahana"
+                     :EMAIL "sahanaym@gmail.com"
+                     :BIRTHDAY 2452876200)
+                  #S(FRIEND
+                     :NAME "Shakeela"
+                     :EMAIL "shakeela.jb@gmail.com"
+                     :BIRTHDAY 2618073000)
+                  #S(FRIEND
+                     :NAME "Manish YM"
+                     :EMAIL "manishym@gmail.com"
+                     :BIRTHDAY 2587141800)))
+REMINDME> (create-user-from-form "Manish" "password" "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+  0: (ADD-USER-OBJ
+      #S(USER
+         :NAME "Manish"
+         :PASSWORD "password"
+         :FRIENDS-LIST (#S(FRIEND
+                           :NAME "Sahana"
+                           :EMAIL "sahanaym@gmail.com"
+                           :BIRTHDAY 2452876200)
+                        #S(FRIEND
+                           :NAME "Shakeela"
+                           :EMAIL "shakeela.jb@gmail.com"
+                           :BIRTHDAY 2618073000)
+                        #S(FRIEND
+                           :NAME "Manish YM"
+                           :EMAIL "manishym@gmail.com"
+                           :BIRTHDAY 2587141800))))
+  0: ADD-USER-OBJ returned
+       #S(USER
+          :NAME "Manish"
+          :PASSWORD "password"
+          :FRIENDS-LIST (#S(FRIEND
+                            :NAME "Sahana"
+                            :EMAIL "sahanaym@gmail.com"
+                            :BIRTHDAY 2452876200)
+                         #S(FRIEND
+                            :NAME "Shakeela"
+                            :EMAIL "shakeela.jb@gmail.com"
+                            :BIRTHDAY 2618073000)
+                         #S(FRIEND
+                            :NAME "Manish YM"
+                            :EMAIL "manishym@gmail.com"
+                            :BIRTHDAY 2587141800)))
+#S(USER
+   :NAME "Manish"
+   :PASSWORD "password"
+   :FRIENDS-LIST (#S(FRIEND
+                     :NAME "Sahana"
+                     :EMAIL "sahanaym@gmail.com"
+                     :BIRTHDAY 2452876200)
+                  #S(FRIEND
+                     :NAME "Shakeela"
+                     :EMAIL "shakeela.jb@gmail.com"
+                     :BIRTHDAY 2618073000)
+                  #S(FRIEND
+                     :NAME "Manish YM"
+                     :EMAIL "manishym@gmail.com"
+                     :BIRTHDAY 2587141800)))
+REMINDME> (user-friend-list (get-user "Manish"))
+; Evaluation aborted.
+REMINDME> (user-friends-list (get-user "Manish"))
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800))
+REMINDME> (defun add-user-obj (user-obj &optional (database *database-of-users*))
+            (setf (gethash (user-name user-obj) database) user-obj))
+STYLE-WARNING: redefining REMINDME::ADD-USER-OBJ in DEFUN
+ADD-USER-OBJ
+REMINDME> (defmacro standard-page ((&key title) &body body)
+            `(with-html-output-to-string (*standard-output* nil :prologue t :indent t)
+               (:html :xmlns "http://www.w3.org/1999/xhtml"
+                      :xml\:lang "en"
+                      :lang "en"
+                      (:head
+                       (:meta :http-equiv "Content-Type"
+                              :content "text/html;charset=utf-8")
+                       (:title ,title)
+                       (:link :type "text/css"
+                              :rel "stylesheet"
+                              :href "/remindme.css"))
+                      (:body
+                       (:div :id "header"
+                             (:img :src "/logo.jpg"
+                                   :alt "Some image"
+                                   :class "logo")
+                             (:span :class "strapline"
+                                    "Your friend's birthday in your pocket"))
+                       ,@body))))
+STANDARD-PAGE
+REMINDME> (define-easy-handler (create-user)
+              (standard-page 
+                  :title "Create a new assistant" 
+                  (:h3 Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.)
+                  (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                         (:input :type :string :name "name")
+                         (:input :type :password :name "password")
+                         (:input :type :file :name "file1")
+                         (:input :type :submit :value "Create user"))))
+; Evaluation aborted.
+REMINDME> (define-easy-handler (create-user)
+              (standard-page 
+                  (:title "Create a new assistant")
+                  (:h3 Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.)
+                  (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                         (:input :type :string :name "name")
+                         (:input :type :password :name "password")
+                         (:input :type :file :name "file1")
+                         (:input :type :submit :value "Create user"))))
+; Evaluation aborted.
+REMINDME> (define-easy-handler (create-user)
+              (standard-page 
+                  (:title "Create a new assistant")
+                  (:h3 Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.)
+                  (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                         (:input :type :string :name "name")
+                         (:input :type :password :name "password")
+                         (:input :type :file :name "file1")
+                         (:input :type :submit :value "Create user"))))
+; Evaluation aborted.
+REMINDME> (define-easy-handler (create-user)
+              (standard-page 
+                  (:title "Create a new assistant")
+                  (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                  (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                         (:input :type :string :name "name")
+                         (:input :type :password :name "password")
+                         (:input :type :file :name "file1")
+                         (:input :type :submit :value "Create user"))))
+; Evaluation aborted.
+REMINDME> (define-easy-handler (create-user)
+              (standard-page 
+                  (:title "Create a new assistant")
+                  (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                  (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                         (:input :type :string :name "name")
+                         (:input :type :password :name "password")
+                         (:input :type :file :name "file1")
+                         (:input :type :submit :value "Create user"))))
+; Evaluation aborted.
+REMINDME> (define-easy-handler (create-user)
+              (standard-page (:title "Create a new assistant")
+                (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                       (:input :type :string :name "name")
+                       (:input :type :password :name "password")
+                       (:input :type :file :name "file1")
+                       (:input :type :submit :value "Create user"))))
+; Evaluation aborted.
+REMINDME> (define-easy-handler (create-user :uri "/create-user")
+              (standard-page (:title "Create a new assistant")
+                (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                       (:input :type :string :name "name")
+                       (:input :type :password :name "password")
+                       (:input :type :file :name "file1")
+                       (:input :type :submit :value "Create user"))))
+; Evaluation aborted.
+REMINDME> (define-easy-handler (create-user) ()
+              (standard-page (:title "Create a new assistant")
+                (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                       (:input :type :string :name "name")
+                       (:input :type :password :name "password")
+                       (:input :type :file :name "file1")
+                       (:input :type :submit :value "Create user"))))
+CREATE-USER
+REMINDME> (start *site*)
+#<ACCEPTOR (host *, port 8000)>
+REMINDME> (define-easy-handler (create-user :uri "/create-user") ()
+              (standard-page (:title "Create a new assistant")
+                (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                       (:input :type :string :name "name")
+                       (:input :type :password :name "password")
+                       (:input :type :file :name "file1")
+                       (:input :type :submit :value "Create user"))))
+STYLE-WARNING: redefining REMINDME::CREATE-USER in DEFUN
+CREATE-USER
+REMINDME> (define-easy-handler (create-user :uri "/create-user") ()
+              (standard-page (:title "Create a new assistant")
+                (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                       (:input :type :string :name "name" :lable "Name" :br)
+                       (:input :type :password :name "password")
+                       (:input :type :file :name "file1")
+                       (:input :type :submit :value "Create user"))))
+STYLE-WARNING: redefining REMINDME::CREATE-USER in DEFUN
+CREATE-USER
+REMINDME> (define-easy-handler (create-user :uri "/create-user") ()
+              (standard-page (:title "Create a new assistant")
+                (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                       (:input :type :string :name "name" :label "Name" :br)
+                       (:input :type :password :name "password")
+                       (:input :type :file :name "file1")
+                       (:input :type :submit :value "Create user"))))
+STYLE-WARNING: redefining REMINDME::CREATE-USER in DEFUN
+CREATE-USER
+REMINDME> (define-easy-handler (create-user :uri "/create-user") ()
+              (standard-page (:title "Create a new assistant")
+                (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                       (:input :type :string :name "name" :label "Name") (:br)
+                       (:input :type :password :name "password")
+                       (:input :type :file :name "file1")
+                       (:input :type :submit :value "Create user"))))
+STYLE-WARNING: redefining REMINDME::CREATE-USER in DEFUN
+CREATE-USER
+REMINDME> (define-easy-handler (create-user :uri "/create-user") ()
+              (standard-page (:title "Create a new assistant")
+                (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                       (:input :type :string :name "name" :label "Name") (:br)
+                       (:input :type :password :name "password") (:br)
+                       (:input :type :file :name "file1") 
+                       (:input :type :submit :value "Create user"))))
+STYLE-WARNING: redefining REMINDME::CREATE-USER in DEFUN
+CREATE-USER
+REMINDME> (define-easy-handler (create-user :uri "/create-user") ()
+              (standard-page (:title "Create a new assistant")
+                (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                      (:p Name (:input :type :string :name "name" :label "Name"))
+                      (:p Password (:input :type :password :name "password") (:br))
+                      (:p File  (:input :type :file :name "file1"))
+                       (:input :type :submit :value "Create user"))))
+
+;     (REMINDME::STANDARD-PAGE (:TITLE "Create a new assistant")
+;       (:H3
+;        "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+;       (:FORM :ACTION "/new-user" :METHOD :POST :ENCTYPE "multipart/form-data"
+;        (:P REMINDME::NAME (:INPUT :TYPE :STRING :NAME "name" :LABEL "Name"))
+;        (:P REMINDME::PASSWORD (:INPUT :TYPE :PASSWORD :NAME "password") (:BR))
+;        (:P REMINDME::FILE (:INPUT :TYPE :FILE :NAME "file1"))
+;        (:INPUT :TYPE :SUBMIT :VALUE "Create user")))
+; --> CL-WHO:WITH-HTML-OUTPUT-TO-STRING WITH-OUTPUT-TO-STRING LET 
+; --> UNWIND-PROTECT FLET BLOCK MULTIPLE-VALUE-BIND MULTIPLE-VALUE-CALL 
+; --> BLOCK SB-C::%WITHIN-CLEANUP RETURN-FROM PROGN 
+; --> CL-WHO:WITH-HTML-OUTPUT LET 
+; ==>
+;   (PROGN
+;    (WRITE-STRING
+;     "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">
+; 
+; <html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en' lang='en'>
+;   <head>
+;     <meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
+;     <title>
+;       Create a new assistant
+;     </title>
+;     <link type='text/css' rel='stylesheet' href='/remindme.css' />
+;   </head>
+;   <body>
+;     <div id='header'>
+;       <img src='/logo.jpg' alt='Some image' class='logo' />
+;       <span class='strapline'>
+;         Your friend's birthday in your pocket
+;       </span>
+;     </div>
+;     <h3>
+;       Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.
+;     </h3>
+;     <form action='/new-user' method='POST' enctype='multipart/form-data'>
+;       <p>
+;         "
+;     *STANDARD-OUTPUT*)
+;    REMINDME::NAME
+;    (WRITE-STRING "
+;         <input type='STRING' name='name' label='Name' />
+;       </p>
+;       <p>
+;         "
+;                  *STANDARD-OUTPUT*)
+;    REMINDME::PASSWORD
+;    (WRITE-STRING "
+;         <input type='PASSWORD' name='password' />
+;         <br />
+;       </p>
+;       <p>
+;         "
+;                  *STANDARD-OUTPUT*)
+;    REMINDME::FILE
+;    (WRITE-STRING "
+;         <input type='FILE' name='file1' />
+;       </p>
+;       <input type='SUBMIT' value='Create user' />
+;     </form>
+;   </body>
+; </html>"
+;                  *STANDARD-OUTPUT*))
+; 
+; caught WARNING:
+;   undefined variable: FILE
+; 
+; caught WARNING:
+;   undefined variable: NAME
+; 
+; caught WARNING:
+;   undefined variable: PASSWORD
+; 
+; compilation unit finished
+;   Undefined variables:
+;     FILE NAME PASSWORD
+;   caught 3 WARNING conditions
+STYLE-WARNING: redefining REMINDME::CREATE-USER in DEFUN
+CREATE-USER
+REMINDME>  (define-easy-handler (create-user :uri "/create-user") ()
+              (standard-page (:title "Create a new assistant")
+                (:h3 "Create a new assistant to remind you and your friends about upcoming birthdays in a few seconds.")
+                (:form :action "/new-user" :method :post :enctype "multipart/form-data"
+                      (:p "Name" (:input :type :string :name "name" :label "Name"))
+                      (:p "Password" (:input :type :password :name "password") (:br))
+                      (:p "File"  (:input :type :file :name "file1"))
+                       (:input :type :submit :value "Create user"))))
+STYLE-WARNING: redefining REMINDME::CREATE-USER in DEFUN
+CREATE-USER
+REMINDME> (define-easy-handler (new-user :uri "/new-user") ()
+  "To create users from the form submitted by user"
+  (let ((file (post-parameter "file1"))
+        (name (post-parameter "name"))
+        (password (post-parameter "password")))
+    (log-message :info "POST ~A" (post-parameter "file1"))
+    (log-message :info "POST:name ~A" name) 
+    (log-message :info "FILE ~A" file)
+    (when file
+        (let ((path (handle-file file)))
+          (log-message :info "Saved file to ~A" path)
+          (create-user-from-form name password path)))))
+    
+NEW-USER
+REMINDME> (define-easy-handler (new-user :uri "/new-user") ()
+  "To create users from the form submitted by user"
+  (let ((file (post-parameter "file1"))
+        (name (post-parameter "name"))
+        (password (post-parameter "password")))
+    (log-message :info "POST ~A" (post-parameter "file1"))
+    (log-message :info "POST:name ~A" name) 
+    (log-message :info "FILE ~A" file)
+    (when file
+        (let ((path (handle-file file)))
+          (log-message :info "Saved file to ~A" path)
+          (create-user-from-form name password path))
+        (redirect "new-user-home"))))
+    
+STYLE-WARNING: redefining REMINDME::NEW-USER in DEFUN
+NEW-USER
+REMINDME> (get-user "Manish")
+#S(USER
+   :NAME "Manish"
+   :PASSWORD "password"
+   :FRIENDS-LIST (#S(FRIEND
+                     :NAME "Sahana"
+                     :EMAIL "sahanaym@gmail.com"
+                     :BIRTHDAY 2452876200)
+                  #S(FRIEND
+                     :NAME "Shakeela"
+                     :EMAIL "shakeela.jb@gmail.com"
+                     :BIRTHDAY 2618073000)
+                  #S(FRIEND
+                     :NAME "Manish YM"
+                     :EMAIL "manishym@gmail.com"
+                     :BIRTHDAY 2587141800)))
+T
+REMINDME> (get-user "User1")
+NIL
+NIL
+REMINDME> (defvar *message-log-pathname*
+  "Logs generated by log-message"
+  #+win32 #P"C:/hunchentoot-temp/upload-message.txt"
+  #-win32 #P"/tmp/hunchentoot-temp/upload-message.txt")
+; Evaluation aborted.
+REMINDME> (defvar *message-log-pathname*
+  #+win32 #P"C:/hunchentoot-temp/upload-message.txt"
+  #-win32 #P"/tmp/hunchentoot-temp/upload-message.txt")
+*MESSAGE-LOG-PATHNAME*
+REMINDME> (defvar *message-log-pathname*
+  #+win32 #P"C:/hunchentoot-temp/upload-message.txt"
+  #-win32 #P"/tmp/hunchentoot-temp/upload-message.txt")
+*MESSAGE-LOG-PATHNAME*
+REMINDME> (setf *catch-errors(setf *catch-errors-p* t)-p* t)
+T
+REMINDME> (setf *catch-errors-p* nil)
+NIL
+REMINDME> (get-user "User1")
+#S(USER
+   :NAME "User1"
+   :PASSWORD "asdf"
+   :FRIENDS-LIST (#S(FRIEND
+                     :NAME "Sahana"
+                     :EMAIL "sahanaym@gmail.com"
+                     :BIRTHDAY 2452876200)
+                  #S(FRIEND
+                     :NAME "Shakeela"
+                     :EMAIL "shakeela.jb@gmail.com"
+                     :BIRTHDAY 2618073000)
+                  #S(FRIEND
+                     :NAME "Manish YM"
+                     :EMAIL "manishym@gmail.com"
+                     :BIRTHDAY 2587141800)))
+T
+REMINDME> (get-user "asdf")
+#S(USER
+   :NAME "asdf"
+   :PASSWORD "pqrs"
+   :FRIENDS-LIST (#S(FRIEND
+                     :NAME "Sahana"
+                     :EMAIL "sahanaym@gmail.com"
+                     :BIRTHDAY 2452876200)
+                  #S(FRIEND
+                     :NAME "Shakeela"
+                     :EMAIL "shakeela.jb@gmail.com"
+                     :BIRTHDAY 2618073000)
+                  #S(FRIEND
+                     :NAME "Manish YM"
+                     :EMAIL "manishym@gmail.com"
+                     :BIRTHDAY 2587141800)))
+T
+REMINDME> (define-easy-handler (new-user :uri "/new-user") ()
+  "To create users from the form submitted by user"
+  (let ((file (post-parameter "file1"))
+        (name (post-parameter "name"))
+        (password (post-parameter "password")))
+    (log-message :info "POST ~A" (post-parameter "file1"))
+    (log-message :info "POST:name ~A" name) 
+    (log-message :info "FILE ~A" file)
+    (when file
+        (let ((path (handle-file file)))
+          (log-message :info "Saved file to ~A" path)
+          (create-user-from-form name password path))
+        (redirect "new-user-home"))))
+    
+STYLE-WARNING: redefining REMINDME::NEW-USER in DEFUN
+NEW-USER
+REMINDME> (define-easy-handler (new-user :uri "/new-user") ()
+  "To create users from the form submitted by user"
+  (let ((file (post-parameter "file1"))
+        (name (post-parameter "name"))
+        (password (post-parameter "password")))
+    (log-message :info "POST ~A" (post-parameter "file1"))
+    (log-message :info "POST:name ~A" name) 
+    (log-message :info "FILE ~A" file)
+    (when file
+        (let ((path (handle-file file)))
+          (log-message :info "Saved file to ~A" path)
+          (create-user-from-form name password path))
+        
+        (redirect "new-user-home"))))
+    
+STYLE-WARNING: redefining REMINDME::NEW-USER in DEFUN
+NEW-USER
+REMINDME> (defun handle-file (post-parameter)
+  "Given post parameter in the form (path name content), it creates a file in
+*tmp-test-directory*"
+  (when (and post-parameter
+             (listp post-parameter))
+    (destructuring-bind (path file-name content-type) post-parameter       
+      (let ((new-path (make-pathname :name file-name
+                                     :type nil
+                                     :defaults *tmp-test-directory*)))
+        (log-message "New-path ~A" (pathname-name new-path))
+        (copy-file path (ensure-directories-exist new-path) :overwrite t )
+        new-path))))
+; in: LAMBDA NIL
+;     (DESTRUCTURING-BIND
+;         (REMINDME::PATH REMINDME::FILE-NAME HUNCHENTOOT:CONTENT-TYPE)
+;         HUNCHENTOOT:POST-PARAMETER
+;       (LET ((REMINDME::NEW-PATH
+;              (MAKE-PATHNAME :NAME REMINDME::FILE-NAME :TYPE NIL :DEFAULTS
+;                             REMINDME::*TMP-TEST-DIRECTORY*)))
+;         (HUNCHENTOOT:LOG-MESSAGE "New-path ~A"
+;                                  (PATHNAME-NAME REMINDME::NEW-PATH))
+;         (CL-FAD:COPY-FILE REMINDME::PATH
+;                           (ENSURE-DIRECTORIES-EXIST REMINDME::NEW-PATH)
+;                           :OVERWRITE T)
+;         REMINDME::NEW-PATH))
+; --> LET LET* 
+; ==>
+;   (LET* ((REMINDME::PATH (CAR #:WHOLE0))
+;          (REMINDME::FILE-NAME (CAR (CDR #:WHOLE0)))
+;          (HUNCHENTOOT:CONTENT-TYPE (CAR (CDR #))))
+;     (LET ((REMINDME::NEW-PATH
+;            (MAKE-PATHNAME :NAME REMINDME::FILE-NAME :TYPE NIL :DEFAULTS
+;                           REMINDME::*TMP-TEST-DIRECTORY*)))
+;       (HUNCHENTOOT:LOG-MESSAGE "New-path ~A"
+;                                (PATHNAME-NAME REMINDME::NEW-PATH))
+;       (CL-FAD:COPY-FILE REMINDME::PATH
+;                         (ENSURE-DIRECTORIES-EXIST REMINDME::NEW-PATH)
+;                         :OVERWRITE T)
+;       REMINDME::NEW-PATH))
+; 
+; caught STYLE-WARNING:
+;   The variable CONTENT-TYPE is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+STYLE-WARNING: redefining REMINDME::HANDLE-FILE in DEFUN
+HANDLE-FILE
+REMINDME> (define-easy-handler (new-user :uri "/new-user") ()
+  "To create users from the form submitted by user"
+  (let ((file (post-parameter "file1"))
+        (name (post-parameter "name"))
+        (password (post-parameter "password")))
+    (log-message :info "POST ~A" (post-parameter "file1"))
+    (log-message :info "POST:name ~A" name) 
+    (log-message :info "FILE ~A" file)
+    (when file
+        (let ((path (handle-file file)))
+          (log-message :info "Saved file to ~A" path)
+          (create-user-from-form name password path))
+        
+        (redirect "/new-user-home" ))))
+    
+STYLE-WARNING: redefining REMINDME::NEW-USER in DEFUN
+NEW-USER
+REMINDME> (define-easy-handler (new-user :uri "/new-user") ()
+  "To create users from the form submitted by user"
+  (let ((file (post-parameter "file1"))
+        (name (post-parameter "name"))
+        (password (post-parameter "password")))
+    (log-message :info "POST ~A" (post-parameter "file1"))
+    (log-message :info "POST:name ~A" name) 
+    (log-message :info "FILE ~A" file)
+    (when file
+        (let ((path (handle-file file)))
+          (log-message :info "Saved file to ~A" path)
+          (create-user-from-form name password path))  
+        (redirect "/new-user-home" ))))
+    
+STYLE-WARNING: redefining REMINDME::NEW-USER in DEFUN
+NEW-USER
+REMINDME> (define-easy-handler (new-user :uri "/new-user") ()
+  "To create users from the form submitted by user"
+  (let ((file (post-parameter "file1"))
+        (name (post-parameter "name"))
+        (password (post-parameter "password")))
+    (log-message :info "POST ~A" (post-parameter "file1"))
+    (log-message :info "POST:name ~A" name) 
+    (log-message :info "FILE ~A" file)
+    (when file
+        (let ((path (handle-file file)))
+          (log-message :info "Saved file to ~A" path)
+          (create-user-from-form name password path))  
+        (redirect "/new-user-home" ))))
+    
+STYLE-WARNING: redefining REMINDME::NEW-USER in DEFUN
+NEW-USER
+REMINDME> (create-user-from-form "manish" "passwd" "/home/manish/projects/lisp/web/learn/birthdays.cvs")
+  0: (ADD-USER-OBJ
+      #S(USER
+         :NAME "manish"
+         :PASSWORD "passwd"
+         :FRIENDS-LIST (#S(FRIEND
+                           :NAME "Sahana"
+                           :EMAIL "sahanaym@gmail.com"
+                           :BIRTHDAY 2452876200)
+                        #S(FRIEND
+                           :NAME "Shakeela"
+                           :EMAIL "shakeela.jb@gmail.com"
+                           :BIRTHDAY 2618073000)
+                        #S(FRIEND
+                           :NAME "Manish YM"
+                           :EMAIL "manishym@gmail.com"
+                           :BIRTHDAY 2587141800))))
+  0: ADD-USER-OBJ returned
+       #S(USER
+          :NAME "manish"
+          :PASSWORD "passwd"
+          :FRIENDS-LIST (#S(FRIEND
+                            :NAME "Sahana"
+                            :EMAIL "sahanaym@gmail.com"
+                            :BIRTHDAY 2452876200)
+                         #S(FRIEND
+                            :NAME "Shakeela"
+                            :EMAIL "shakeela.jb@gmail.com"
+                            :BIRTHDAY 2618073000)
+                         #S(FRIEND
+                            :NAME "Manish YM"
+                            :EMAIL "manishym@gmail.com"
+                            :BIRTHDAY 2587141800)))
+#S(USER
+   :NAME "manish"
+   :PASSWORD "passwd"
+   :FRIENDS-LIST (#S(FRIEND
+                     :NAME "Sahana"
+                     :EMAIL "sahanaym@gmail.com"
+                     :BIRTHDAY 2452876200)
+                  #S(FRIEND
+                     :NAME "Shakeela"
+                     :EMAIL "shakeela.jb@gmail.com"
+                     :BIRTHDAY 2618073000)
+                  #S(FRIEND
+                     :NAME "Manish YM"
+                     :EMAIL "manishym@gmail.com"
+                     :BIRTHDAY 2587141800)))
+REMINDME> (define-easy-handler (new-user :uri "/new-user") ()
+  "To create users from the form submitted by user"
+  (let ((file (post-parameter "file1"))
+        (name (post-parameter "name"))
+        (password (post-parameter "password")))
+    (log-message :info "POST ~A" (post-parameter "file1"))
+    (log-message :info "POST:name ~A" name) 
+    (log-message :info "FILE ~A" file)
+    (when file
+        (let ((path (handle-file file)))
+          (log-message :info "Saved file to ~A" path)
+          (setf (session-value 'current-user)  (create-user-from-form name password path))
+        (redirect "/new-user-home" )))))
+    
+STYLE-WARNING: redefining REMINDME::NEW-USER in DEFUN
+NEW-USER
+REMINDME> (define-easy-handler (new-user-home) ()
+            (let (user ((session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (:li :span  :class "name" (friend-name x))
+                       (:li :span :class "email" (friend-email x))
+                       (:li :span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x)))))))))
+                         
+; in: LAMBDA NIL
+;     (LET (REMINDME::USER ((HUNCHENTOOT:SESSION-VALUE 'REMINDME::CURRENT-USER)))
+;       (IF REMINDME::USER
+;           (REMINDME::STANDARD-PAGE (:TITLE (FORMAT NIL "Welcome ~A" #))
+;             (:H3 (FORMAT NIL "Listing friends email and birthdays for ~A" #))
+;             (:UL (DOLIST # # # #)))))
+; 
+; caught ERROR:
+;   The lambda variable (SESSION-VALUE 'CURRENT-USER) is not a symbol.
+; 
+; compilation unit finished
+;   caught 1 ERROR condition
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home) ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (:li :span  :class "name" (friend-name x))
+                       (:li :span :class "email" (friend-email x))
+                       (:li :span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x)))))))))
+                         
+
+;     (REMINDME::STANDARD-PAGE (:TITLE
+;                               (FORMAT NIL "Welcome ~A"
+;                                       (REMINDME::USER-NAME REMINDME::USER)))
+;       (:H3
+;        (FORMAT NIL "Listing friends email and birthdays for ~A"
+;                (REMINDME::USER-NAME REMINDME::USER)))
+;       (:UL
+;        (DOLIST (REMINDME::X (REMINDME::USER-FRIENDS-LIST REMINDME::USER))
+;          (:LI :SPAN :CLASS "name" (REMINDME::FRIEND-NAME REMINDME::X))
+;          (:LI :SPAN :CLASS "email" (REMINDME::FRIEND-EMAIL REMINDME::X))
+;          (:LI :SPAN :CLASS "birthday" (REMINDME::ENCODE-BIRTHDAY-FROM-TIME #)))))
+; --> CL-WHO:WITH-HTML-OUTPUT-TO-STRING WITH-OUTPUT-TO-STRING LET 
+; --> UNWIND-PROTECT FLET BLOCK MULTIPLE-VALUE-BIND MULTIPLE-VALUE-CALL 
+; --> BLOCK SB-C::%WITHIN-CLEANUP RETURN-FROM PROGN 
+; --> CL-WHO:WITH-HTML-OUTPUT LET PROGN DOLIST BLOCK LET TAGBODY UNLESS IF 
+; --> PROGN LET* TAGBODY :LI 
+; ==>
+;   (REMINDME::ENCODE-BIRTHDAY-FROM-TIME (REMINDME::FRIEND-BIRTHDAY REMINDME::X))
+; 
+; caught STYLE-WARNING:
+;   undefined function: ENCODE-BIRTHDAY-FROM-TIME
+
+; --> CL-WHO:WITH-HTML-OUTPUT-TO-STRING WITH-OUTPUT-TO-STRING LET 
+; --> UNWIND-PROTECT FLET BLOCK MULTIPLE-VALUE-BIND MULTIPLE-VALUE-CALL 
+; --> BLOCK SB-C::%WITHIN-CLEANUP RETURN-FROM PROGN 
+; --> CL-WHO:WITH-HTML-OUTPUT LET PROGN DOLIST BLOCK LET TAGBODY UNLESS IF 
+; --> PROGN LET* TAGBODY 
+; ==>
+;   (:LI :SPAN :CLASS "name" (REMINDME::FRIEND-NAME REMINDME::X))
+; 
+; caught STYLE-WARNING:
+;   undefined function: :LI
+; 
+; compilation unit finished
+;   Undefined functions:
+;     ENCODE-BIRTHDAY-FROM-TIME :LI
+;   caught 2 STYLE-WARNING conditions
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home) ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (html (:li :span  :class "name" (friend-name x))
+                       (:li :span :class "email" (friend-email x))
+                       (:li :span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x))))))))))
+                         
+
+;     (REMINDME::STANDARD-PAGE (:TITLE
+;                               (FORMAT NIL "Welcome ~A"
+;                                       (REMINDME::USER-NAME REMINDME::USER)))
+;       (:H3
+;        (FORMAT NIL "Listing friends email and birthdays for ~A"
+;                (REMINDME::USER-NAME REMINDME::USER)))
+;       (:UL
+;        (DOLIST (REMINDME::X (REMINDME::USER-FRIENDS-LIST REMINDME::USER))
+;          (REMINDME::HTML (:LI :SPAN :CLASS "name" #) (:LI :SPAN :CLASS "email" #)
+;           (:LI :SPAN :CLASS "birthday" #)))))
+; --> CL-WHO:WITH-HTML-OUTPUT-TO-STRING WITH-OUTPUT-TO-STRING LET 
+; --> UNWIND-PROTECT FLET BLOCK MULTIPLE-VALUE-BIND MULTIPLE-VALUE-CALL 
+; --> BLOCK SB-C::%WITHIN-CLEANUP RETURN-FROM PROGN 
+; --> CL-WHO:WITH-HTML-OUTPUT LET PROGN DOLIST BLOCK LET TAGBODY UNLESS IF 
+; --> PROGN LET* TAGBODY REMINDME::HTML :LI 
+; ==>
+;   (REMINDME::ENCODE-BIRTHDAY-FROM-TIME (REMINDME::FRIEND-BIRTHDAY REMINDME::X))
+; 
+; caught STYLE-WARNING:
+;   undefined function: ENCODE-BIRTHDAY-FROM-TIME
+
+; --> CL-WHO:WITH-HTML-OUTPUT-TO-STRING WITH-OUTPUT-TO-STRING LET 
+; --> UNWIND-PROTECT FLET BLOCK MULTIPLE-VALUE-BIND MULTIPLE-VALUE-CALL 
+; --> BLOCK SB-C::%WITHIN-CLEANUP RETURN-FROM PROGN 
+; --> CL-WHO:WITH-HTML-OUTPUT LET PROGN DOLIST BLOCK LET TAGBODY UNLESS IF 
+; --> PROGN LET* TAGBODY 
+; ==>
+;   (REMINDME::HTML (:LI :SPAN :CLASS "name" (REMINDME::FRIEND-NAME REMINDME::X))
+;    (:LI :SPAN :CLASS "email" (REMINDME::FRIEND-EMAIL REMINDME::X))
+;    (:LI :SPAN :CLASS "birthday"
+;     (REMINDME::ENCODE-BIRTHDAY-FROM-TIME
+;      (REMINDME::FRIEND-BIRTHDAY REMINDME::X))))
+; 
+; caught STYLE-WARNING:
+;   undefined function: HTML
+
+; --> CL-WHO:WITH-HTML-OUTPUT-TO-STRING WITH-OUTPUT-TO-STRING LET 
+; --> UNWIND-PROTECT FLET BLOCK MULTIPLE-VALUE-BIND MULTIPLE-VALUE-CALL 
+; --> BLOCK SB-C::%WITHIN-CLEANUP RETURN-FROM PROGN 
+; --> CL-WHO:WITH-HTML-OUTPUT LET PROGN DOLIST BLOCK LET TAGBODY UNLESS IF 
+; --> PROGN LET* TAGBODY REMINDME::HTML 
+; ==>
+;   (:LI :SPAN :CLASS "name" (REMINDME::FRIEND-NAME REMINDME::X))
+; 
+; caught STYLE-WARNING:
+;   undefined function: :LI
+; 
+; compilation unit finished
+;   Undefined functions:
+;     ENCODE-BIRTHDAY-FROM-TIME HTML :LI
+;   caught 3 STYLE-WARNING conditions
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home) ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li :span  :class "name" (friend-name x))
+                       (:li :span :class "email" (friend-email x))
+                       (:li :span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x))))))))))
+                         
+
+;     (REMINDME::STANDARD-PAGE (:TITLE
+;                               (FORMAT NIL "Welcome ~A"
+;                                       (REMINDME::USER-NAME REMINDME::USER)))
+;       (:H3
+;        (FORMAT NIL "Listing friends email and birthdays for ~A"
+;                (REMINDME::USER-NAME REMINDME::USER)))
+;       (:UL
+;        (DOLIST (REMINDME::X (REMINDME::USER-FRIENDS-LIST REMINDME::USER))
+;          (CL-WHO:HTM (:LI :SPAN :CLASS "name" #) (:LI :SPAN :CLASS "email" #)
+;           (:LI :SPAN :CLASS "birthday" #)))))
+; --> CL-WHO:WITH-HTML-OUTPUT-TO-STRING WITH-OUTPUT-TO-STRING LET 
+; --> UNWIND-PROTECT FLET BLOCK MULTIPLE-VALUE-BIND MULTIPLE-VALUE-CALL 
+; --> BLOCK SB-C::%WITHIN-CLEANUP RETURN-FROM PROGN 
+; --> CL-WHO:WITH-HTML-OUTPUT LET PROGN DOLIST BLOCK LET TAGBODY UNLESS IF 
+; --> PROGN LET* TAGBODY PROGN 
+; ==>
+;   (REMINDME::ENCODE-BIRTHDAY-FROM-TIME (REMINDME::FRIEND-BIRTHDAY REMINDME::X))
+; 
+; caught STYLE-WARNING:
+;   undefined function: ENCODE-BIRTHDAY-FROM-TIME
+; 
+; compilation unit finished
+;   Undefined function:
+;     ENCODE-BIRTHDAY-FROM-TIME
+;   caught 1 STYLE-WARNING condition
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (defun encode-birthday-from-time (time)
+            (decode-universal-time time))
+ENCODE-BIRTHDAY-FROM-TIME
+REMINDME> (decode-universal-time (get-universal-time))
+3
+19
+13
+22
+9
+2011
+3
+NIL
+-11/2
+REMINDME> (defun encode-birthday-from-time (time)
+            (multiple-value-bind (s m h day mon year) (decode-universal-time time)
+              (format nil "~A.~A.~A" day mon year)))
+; in: LAMBDA NIL
+;     (MULTIPLE-VALUE-BIND
+;         (REMINDME::S REMINDME::M REMINDME::H REMINDME::DAY REMINDME::MON
+;          REMINDME::YEAR)
+;         (DECODE-UNIVERSAL-TIME TIME)
+;       (FORMAT NIL "~A.~A.~A" REMINDME::DAY REMINDME::MON REMINDME::YEAR))
+; --> MULTIPLE-VALUE-CALL 
+; ==>
+;   #'(LAMBDA
+;         (&OPTIONAL (REMINDME::S) (REMINDME::M) (REMINDME::H) (REMINDME::DAY)
+;          (REMINDME::MON) (REMINDME::YEAR)
+;          &REST #:G0)
+;       (DECLARE (IGNORE #:G0))
+;       (FORMAT NIL "~A.~A.~A" REMINDME::DAY REMINDME::MON REMINDME::YEAR))
+; 
+; caught STYLE-WARNING:
+;   The variable S is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable M is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable H is defined but never used.
+; 
+; compilation unit finished
+;   caught 3 STYLE-WARNING conditions
+STYLE-WARNING: redefining REMINDME::ENCODE-BIRTHDAY-FROM-TIME in DEFUN
+ENCODE-BIRTHDAY-FROM-TIME
+REMINDME> (encode-birthday-from-time (get-universal-time))
+"22.9.2011"
+REMINDME> (defun encode-birthday-from-time (time)
+            (multiple-value-bind (s m h day mon year) (decode-universal-time time)
+              (format nil "~A.~A.~A" mon day year)))
+; in: LAMBDA NIL
+;     (MULTIPLE-VALUE-BIND
+;         (REMINDME::S REMINDME::M REMINDME::H REMINDME::DAY REMINDME::MON
+;          REMINDME::YEAR)
+;         (DECODE-UNIVERSAL-TIME TIME)
+;       (FORMAT NIL "~A.~A.~A" REMINDME::MON REMINDME::DAY REMINDME::YEAR))
+; --> MULTIPLE-VALUE-CALL 
+; ==>
+;   #'(LAMBDA
+;         (&OPTIONAL (REMINDME::S) (REMINDME::M) (REMINDME::H) (REMINDME::DAY)
+;          (REMINDME::MON) (REMINDME::YEAR)
+;          &REST #:G0)
+;       (DECLARE (IGNORE #:G0))
+;       (FORMAT NIL "~A.~A.~A" REMINDME::MON REMINDME::DAY REMINDME::YEAR))
+; 
+; caught STYLE-WARNING:
+;   The variable S is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable M is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable H is defined but never used.
+; 
+; compilation unit finished
+;   caught 3 STYLE-WARNING conditions
+STYLE-WARNING: redefining REMINDME::ENCODE-BIRTHDAY-FROM-TIME in DEFUN
+ENCODE-BIRTHDAY-FROM-TIME
+REMINDME> (encode-birthday-from-time (get-universal-time))
+"9.22.2011"
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li :span  :class "name" (friend-name x))
+                       (:li :span :class "email" (friend-email x))
+                       (:li :span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x))))))))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li :span  :class="name" (friend-name x))
+                       (:li :span :class "email" (friend-email x))
+                       (:li :span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x))))))))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li (:span  :class "name" (friend-name x)))
+                       (:li (:span :class "email" (friend-email x)))
+                       (:li (:span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x)))))))))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (str (format nil "Welcome ~A" (user-name user))))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li :span  :class="name" (friend-name x))
+                       (:li :span :class "email" (friend-email x))
+                       (:li :span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x))))))))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (user-friends-list (get-user "asdef"))
+(#S(FRIEND :NAME "Sahana" :EMAIL "sahanaym@gmail.com" :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND :NAME "Manish YM" :EMAIL "manishym@gmail.com" :BIRTHDAY 2587141800))
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (str (format nil "Welcome ~A" (user-name user))))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li :span  :class="name" (friend-name x))
+                       (:li :span :class "email" (friend-email x))
+                       (:li :span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x))))))))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li (:span  :class "name" (friend-name x)))
+                       (:li (:span :class "email" (friend-email x)))
+                       (:li (:span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x)))))))))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li (:span  :class "name" (str(friend-name x))))
+                       (:li (:span :class "email" (friend-email x)))
+                       (:li (:span :class "birthday" (encode-birthday-from-time 
+                                                     (friend-birthday x)))))))))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li (:span  :class "name" (str(friend-name x))))
+                       (:li (:span :class "email" (str (friend-email x))))
+                       (:li (:span :class "birthday" (str (encode-birthday-from-time 
+                                                     (friend-birthday x))))))))))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li (:span  :class "name" (str(friend-name x))))
+                        (:span :class "email" (str (friend-email x)))
+                        (:span :class "birthday" (str (encode-birthday-from-time 
+                                                     (friend-birthday x)))))))))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li (:span  :class "name" (str(friend-name x)))
+                        (:span :class "email" (str (friend-email x)))
+                        (:span :class "birthday" (str (encode-birthday-from-time 
+                                                     (friend-birthday x))))))))))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (css-lite:css
+              (("body") (:width "70%")
+               (:align "center")
+               (:background-color "0x777"))))
+
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (css-lite:css
+              (("body") (:width "70%"
+                                :align "center"
+                                :background-color "0x777"))))
+
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (css-lite:css
+              (("body") (:width "70%"
+                                :align "center"
+                                :background-color "0x777"))))
+
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (css-lite:css
+              (("body") (:width "70%"
+                                :align "center"
+                                :background-color "0x777"))))
+
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (css-lite:css
+              (("body") 
+               (:width "70%"
+                       :align "center"
+                       :background-color "0x777"
+                       :border "2px"))))
+
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (css-lite:css
+              (("body") 
+               (:width "70%"
+                       :align "center"
+                       :background-color "0x777"
+                       :padding "200px"
+                       :border "2px")))
+)
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (css-lite:css
+              (("body") 
+               (:width "70%"
+                       :align "center"
+                       :background "0x777"
+                       :padding "200px"
+                       :border "2px")))
+)
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (css-lite:css
+              (("body") 
+               (:width "70%"
+                       :align "center"
+                       :background-color "#777"
+                       :padding "200px"
+                       :border "2px" "solid" "#000")))
+)
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (css-lite:css
+              (("body") 
+               (:width "70%"
+                       :align "center"
+                       :background-color "#777"
+                       :padding "200px"
+                       :border "2px solid #000")))
+)
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (setf (hunchentoot:content-type*) "text/css")
+            (css-lite:css
+              (("body") 
+               (:width "70%"
+                       :align "center"
+                       :background-color "#777"
+                       :padding "200px"
+                       :border "2px solid #000")))
+)
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (setf (hunchentoot:content-type*) "text/css")
+            (css-lite:css
+              (("body") 
+               (:width "70%"
+                       :align "center"
+                       :background-color "#dededc"
+                       :padding "200px"
+                       :border "2px solid #000")))
+)
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (setf (hunchentoot:content-type*) "text/css")
+            (css-lite:css
+              (("body") 
+               (:width "70%"
+                       :align "center"
+                       :background-color "#dededc"
+                       :padding "20px"
+                       :border "2px solid #000")))
+)
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> *database-of-users*
+#<HASH-TABLE :TEST EQUAL :COUNT 8 {1003918AA1}>
+REMINDME> (maphash #'user-name *database-of-users*)
+; Evaluation aborted.
+REMINDME> (maphash #'(lambda (x y) (format t "key: ~A     User-name: ~A" x (user-name y))) *database-of-users*)
+key: shakeela     User-name: shakeelakey: Manish     User-name: Manishkey: Manish      User-name: Manish key: User1     User-name: User1key: asdf     User-name: asdfkey: manish     User-name: manishkey: pqrs     User-name: pqrskey: asdef     User-name: asdef
+NIL
+REMINDME> (maphash #'(lambda (x y) (format t "key: ~A     User-name: ~A~%" x (user-name y))) *database-of-users*)
+key: shakeela     User-name: shakeela
+key: Manish     User-name: Manish
+key: Manish      User-name: Manish 
+key: User1     User-name: User1
+key: asdf     User-name: asdf
+key: manish     User-name: manish
+key: pqrs     User-name: pqrs
+key: asdef     User-name: asdef
+NIL
+REMINDME> (defun today ()
+            (multiple-value-bind (s m h day month year) (get-decoded-time)
+              (encode-universal-time 0 0 0 day month year)))
+; in: LAMBDA NIL
+;     (MULTIPLE-VALUE-BIND
+;         (REMINDME::S REMINDME::M REMINDME::H REMINDME::DAY REMINDME::MONTH
+;          REMINDME::YEAR)
+;         (GET-DECODED-TIME)
+;       (ENCODE-UNIVERSAL-TIME 0 0 0 REMINDME::DAY REMINDME::MONTH REMINDME::YEAR))
+; --> MULTIPLE-VALUE-CALL 
+; ==>
+;   #'(LAMBDA
+;         (&OPTIONAL (REMINDME::S) (REMINDME::M) (REMINDME::H) (REMINDME::DAY)
+;          (REMINDME::MONTH) (REMINDME::YEAR)
+;          &REST #:G0)
+;       (DECLARE (IGNORE #:G0))
+;       (ENCODE-UNIVERSAL-TIME 0 0 0 REMINDME::DAY REMINDME::MONTH
+;                              REMINDME::YEAR))
+; 
+; caught STYLE-WARNING:
+;   The variable S is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable M is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable H is defined but never used.
+; 
+; compilation unit finished
+;   caught 3 STYLE-WARNING conditions
+TODAY
+REMINDME> (today)
+3525618600
+REMINDME> (today)
+3525618600
+REMINDME> (today)
+3525618600
+REMINDME> (today)
+3525618600
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li (:span  :class "name" (str(friend-name x)))
+                        (:span :class "email" (str (friend-email x)))
+                        (:span :class "birthday" (str (encode-birthday-from-time 
+                                                     (friend-birthday x)))))))))
+                  (redirect "/new-user")))
+                         )
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li (:span  :class "name" (str(friend-name x)))
+                        (:span :class "email" (str (friend-email x)))
+                        (:span :class "birthday" (str (encode-birthday-from-time 
+                                                     (friend-birthday x)))))))))
+                  (redirect "/create-user"))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> (define-easy-handler (new-user-home :uri "/new-user-home") ()
+            (let ((user (session-value 'current-user)))
+              (if user
+                  (standard-page (:title (format nil "Welcome ~A" (user-name user)))
+                    (:h3 (format nil "Listing friends email and birthdays for ~A"
+                                 (user-name user)))
+                    (:ul 
+                     (dolist (x (user-friends-list user))
+                       (htm (:li (:span  :class "name" (str(friend-name x)))
+                        (:span :class "email" (str (friend-email x)))
+                        (:span :class "birthday" (str (encode-birthday-from-time 
+                                                     (friend-birthday x)))))))))
+                  (redirect "/create-user"))))
+                         
+STYLE-WARNING: redefining REMINDME::NEW-USER-HOME in DEFUN
+NEW-USER-HOME
+REMINDME> 
+; No value
+REMINDME> (defparamter *seconds-in-a-day* (* 24 60 60))
+
+; in: DEFPARAMTER *SECONDS-IN-A-DAY*
+;     (REMINDME::DEFPARAMTER REMINDME::*SECONDS-IN-A-DAY* (* 24 60 60))
+; 
+; caught WARNING:
+;   undefined variable: *SECONDS-IN-A-DAY*
+; 
+; caught STYLE-WARNING:
+;   undefined function: DEFPARAMTER
+; 
+; compilation unit finished
+;   Undefined function:
+;     DEFPARAMTER
+;   Undefined variable:
+;     *SECONDS-IN-A-DAY*
+;   caught 1 WARNING condition
+;   caught 1 STYLE-WARNING condition
+; Evaluation aborted.
+REMINDME> (defun seconds-in-a-day ()
+            (* 24 60 60))
+SECONDS-IN-A-DAY
+REMINDME> (seconds-in-a-day)
+86400
+REMINDME> (defun add-days (date no-of-days)
+            (+ (* no-days (seconds-in-a-day))
+               date))
+; in: LAMBDA NIL
+;     (SB-INT:NAMED-LAMBDA REMINDME::ADD-DAYS
+;         (REMINDME::DATE REMINDME::NO-OF-DAYS)
+;       (BLOCK REMINDME::ADD-DAYS
+;         (+ (* REMINDME::NO-DAYS (REMINDME::SECONDS-IN-A-DAY)) REMINDME::DATE)))
+; ==>
+;   #'(SB-INT:NAMED-LAMBDA REMINDME::ADD-DAYS
+;         (REMINDME::DATE REMINDME::NO-OF-DAYS)
+;       (BLOCK REMINDME::ADD-DAYS
+;         (+ (* REMINDME::NO-DAYS (REMINDME::SECONDS-IN-A-DAY)) REMINDME::DATE)))
+; 
+; caught STYLE-WARNING:
+;   The variable NO-OF-DAYS is defined but never used.
+
+; in: LAMBDA NIL
+;     (* REMINDME::NO-DAYS (REMINDME::SECONDS-IN-A-DAY))
+; 
+; caught WARNING:
+;   undefined variable: NO-DAYS
+; 
+; compilation unit finished
+;   Undefined variable:
+;     NO-DAYS
+;   caught 1 WARNING condition
+;   caught 1 STYLE-WARNING condition
+ADD-DAYS
+REMINDME> (defun add-days (date no-of-days)
+            (+ (* no-of-days (seconds-in-a-day))
+               date))
+STYLE-WARNING: redefining REMINDME::ADD-DAYS in DEFUN
+ADD-DAYS
+REMINDME> (decode-universal-time (add-days (today) 4))
+0
+0
+0
+26
+9
+2011
+0
+NIL
+-11/2
+REMINDME> (decode-universal-time (add-days (today) -4))
+0
+0
+0
+18
+9
+2011
+6
+NIL
+-11/2
+REMINDME> (decode-universal-time (add-days (today) -30))
+0
+0
+0
+23
+8
+2011
+1
+NIL
+-11/2
+REMINDME> (decode-universal-time (add-days (today) -300))
+0
+0
+0
+26
+11
+2010
+4
+NIL
+-11/2
+REMINDME> (maphash #'(lambda (x y) (format t "key: ~A     User-name: ~A~%" x (user-name y))) *database-of-users*)
+key: shakeela     User-name: shakeela
+key: Manish     User-name: Manish
+key: Manish      User-name: Manish 
+key: User1     User-name: User1
+key: asdf     User-name: asdf
+key: manish     User-name: manish
+key: pqrs     User-name: pqrs
+key: asdef     User-name: asdef
+NIL
+REMINDME> (maphash #'(lambda (x y) (format t "key: ~A     User-name: ~A~%" x (user-name y))) *database-of-users*)
+key: shakeela     User-name: shakeela
+key: Manish     User-name: Manish
+key: Manish      User-name: Manish 
+key: User1     User-name: User1
+key: asdf     User-name: asdf
+key: manish     User-name: manish
+key: pqrs     User-name: pqrs
+key: asdef     User-name: asdef
+NIL
+REMINDME> (maphash #'(lambda (key value)
+                       (user-friends-list value) *database-of-users*))
+; in: LAMBDA NIL
+;     #'(LAMBDA (REMINDME::KEY REMINDME::VALUE)
+;         (REMINDME::USER-FRIENDS-LIST REMINDME::VALUE)
+;         REMINDME::*DATABASE-OF-USERS*)
+; 
+; caught STYLE-WARNING:
+;   The variable KEY is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+; Evaluation aborted.
+REMINDME> (maphash #'(lambda (key value)
+                       (user-friends-list value)) *database-of-users*)
+; in: LAMBDA NIL
+;     #'(LAMBDA (REMINDME::KEY REMINDME::VALUE)
+;         (REMINDME::USER-FRIENDS-LIST REMINDME::VALUE))
+; 
+; caught STYLE-WARNING:
+;   The variable KEY is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+NIL
+REMINDME> (maphash #'(lambda (key value)
+                       (print (user-friends-list value))) *database-of-users*)
+; in: LAMBDA NIL
+;     #'(LAMBDA (REMINDME::KEY REMINDME::VALUE)
+;         (PRINT (REMINDME::USER-FRIENDS-LIST REMINDME::VALUE)))
+; 
+; caught STYLE-WARNING:
+;   The variable KEY is defined but never used.
+; 
+; compilation unit finished
+;   caught 1 STYLE-WARNING condition
+
+(#S(FRIEND
+    :NAME "Sahana"
+    :EMAIL "sahanaym@gmail.com"
+    :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND
+    :NAME "Manish YM"
+    :EMAIL "manishym@gmail.com"
+    :BIRTHDAY 2587141800)) 
+(#S(FRIEND
+    :NAME "Sahana"
+    :EMAIL "sahanaym@gmail.com"
+    :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND
+    :NAME "Manish YM"
+    :EMAIL "manishym@gmail.com"
+    :BIRTHDAY 2587141800)) 
+(#S(FRIEND
+    :NAME "Sahana"
+    :EMAIL "sahanaym@gmail.com"
+    :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND
+    :NAME "Manish YM"
+    :EMAIL "manishym@gmail.com"
+    :BIRTHDAY 2587141800)) 
+(#S(FRIEND
+    :NAME "Sahana"
+    :EMAIL "sahanaym@gmail.com"
+    :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND
+    :NAME "Manish YM"
+    :EMAIL "manishym@gmail.com"
+    :BIRTHDAY 2587141800)) 
+(#S(FRIEND
+    :NAME "Sahana"
+    :EMAIL "sahanaym@gmail.com"
+    :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND
+    :NAME "Manish YM"
+    :EMAIL "manishym@gmail.com"
+    :BIRTHDAY 2587141800)) 
+(#S(FRIEND
+    :NAME "Sahana"
+    :EMAIL "sahanaym@gmail.com"
+    :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND
+    :NAME "Manish YM"
+    :EMAIL "manishym@gmail.com"
+    :BIRTHDAY 2587141800)) 
+(#S(FRIEND
+    :NAME "Sahana"
+    :EMAIL "sahanaym@gmail.com"
+    :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND
+    :NAME "Manish YM"
+    :EMAIL "manishym@gmail.com"
+    :BIRTHDAY 2587141800)) 
+(#S(FRIEND
+    :NAME "Sahana"
+    :EMAIL "sahanaym@gmail.com"
+    :BIRTHDAY 2452876200)
+ #S(FRIEND
+    :NAME "Shakeela"
+    :EMAIL "shakeela.jb@gmail.com"
+    :BIRTHDAY 2618073000)
+ #S(FRIEND
+    :NAME "Manish YM"
+    :EMAIL "manishym@gmail.com"
+    :BIRTHDAY 2587141800)) 
+NIL
+REMINDME> (defun ignore-year (date)
+            (multiple-value-bind (h m s day month year) (decode-universal-time date)
+              (encode-universal-time 0 0 0 day month 0)))
+; in: LAMBDA NIL
+;     (MULTIPLE-VALUE-BIND
+;         (REMINDME::H REMINDME::M REMINDME::S REMINDME::DAY REMINDME::MONTH
+;          REMINDME::YEAR)
+;         (DECODE-UNIVERSAL-TIME REMINDME::DATE)
+;       (ENCODE-UNIVERSAL-TIME 0 0 0 REMINDME::DAY REMINDME::MONTH 0))
+; --> MULTIPLE-VALUE-CALL 
+; ==>
+;   #'(LAMBDA
+;         (&OPTIONAL (REMINDME::H) (REMINDME::M) (REMINDME::S) (REMINDME::DAY)
+;          (REMINDME::MONTH) (REMINDME::YEAR)
+;          &REST #:G0)
+;       (DECLARE (IGNORE #:G0))
+;       (ENCODE-UNIVERSAL-TIME 0 0 0 REMINDME::DAY REMINDME::MONTH 0))
+; 
+; caught STYLE-WARNING:
+;   The variable H is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable M is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable S is defined but never used.
+; 
+; caught STYLE-WARNING:
+;   The variable YEAR is defined but never used.
+; 
+; compilation unit finished
+;   caught 4 STYLE-WARNING conditions
+IGNORE-YEAR
+REMINDME> (ignore-year (today))
+3178549800
+REMINDME> (ignore-year (add-days (today) 365 ))
+3178463400
+REMINDME> (- (ignore-year (today)) (ignore-year (add-days (today) 365 )))
+86400
+REMINDME> (- (ignore-year (today)) (ignore-year (add-days (today) 366 )))
+0
+REMINDME> (- (ignore-year (today)) (ignore-year (add-days (today) -365 )))
+0
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (setf (hunchentoot:content-type*) "text/css")
+            (css-lite:css
+              (("body") 
+               (:width "70%"
+                       :align "center"
+                       :background-color "#F0ffff"
+                       :padding "20px"
+                       :border "2px solid #000")))
+)
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
+REMINDME> (define-easy-handler (remindme-stylesheet :uri "/remindme.css") ()
+            (setf (hunchentoot:content-type*) "text/css")
+            (css-lite:css
+              (("body") 
+               (:width "70%"
+                       :align "center"
+                       :background-color "#fff8dc"
+                       :padding "20px"
+                       :border "2px solid #000")))
+)
+STYLE-WARNING: redefining REMINDME::REMINDME-STYLESHEET in DEFUN
+REMINDME-STYLESHEET
