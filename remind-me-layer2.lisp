@@ -4,7 +4,7 @@
   password
   friends-list)
 
-
+(defvar *REMAINDER-DAYS* 3)
 
 (defvar *database-of-users*
   (make-hash-table :test #'equalp))
@@ -126,3 +126,10 @@ handle-file function."
     (add-user-obj user)
     (schedule-birthdays user)
     user))
+
+(defun add-friend-from-form (name email birthday-string)
+  (let ((frnd (make-friend :name name :email email
+                           :birthday (read-from-string birthday-string)))
+        (user (session-value 'current-user)))
+    (push frnd (user-friends-list user))
+    (schedule-birthday-mailer user frnd)))

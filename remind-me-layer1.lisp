@@ -3,6 +3,8 @@
 ;      top level of the application in my head.
 (defpackage :remindme
   (:use :cl :hunchentoot :cl-who :cl-fad :parenscript :elephant :cl-ppcre))
+;(quicklisp:quickload '(hunchentoot cl-who cl-fad parenscript elephant cl-ppcre fare-csv clon))
+
 (defmacro intopack (pack)
   `(in-package ,pack))
 (intopack :remindme)
