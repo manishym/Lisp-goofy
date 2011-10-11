@@ -1,0 +1,1 @@
+;;;; scratch pad for all chapters of pcl book.
